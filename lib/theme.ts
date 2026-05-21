@@ -6,16 +6,16 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#001987',
-      light: '#4d8ef7',
-      dark: '#001060',
-      contrastText: '#ffffff',
-    },
-    secondary: {
-      main: '#4d8ef7',
+      main: '#4d8ef7',       // light blue — CTAs, accent icons, borders, active states
       light: '#80b3ff',
       dark: '#1a5fc9',
       contrastText: '#ffffff',
+    },
+    secondary: {
+      main: '#ffffff',       // white — outlined buttons, secondary text elements
+      light: '#ffffff',
+      dark: '#cccccc',
+      contrastText: '#001987',
     },
     background: {
       default: '#121212',
@@ -77,7 +77,7 @@ const theme = createTheme({
         },
         contained: {
           '&:hover': {
-            backgroundColor: '#2e44b0',
+            backgroundColor: '#1a5fc9',
           },
         },
       },
@@ -85,9 +85,9 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: '#001987',
+          backgroundColor: '#001987',    // dark blue header
           backgroundImage: 'none',
-          borderBottom: 'none',
+          borderBottom: '2px solid #4d8ef7',  // light blue accent rule
         },
       },
     },

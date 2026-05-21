@@ -29,7 +29,7 @@ export default function Footer() {
       sx={{
         backgroundColor: '#0A0A0A',
         borderTop: '2px solid',
-        borderColor: 'secondary.main',
+        borderColor: 'primary.main',
         mt: 'auto',
         pt: 6,
         pb: 3,
@@ -49,7 +49,7 @@ export default function Footer() {
                 mb: 1,
               }}
             >
-              OMC<Box component="span" sx={{ color: 'secondary.main' }}> Racing</Box>
+              OMC<Box component="span" sx={{ color: 'primary.main' }}> Racing</Box>
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 2, maxWidth: 300 }}>
               Owyhee Motorcycle Club — Est. 1940. AMA-chartered, member-supported motorsports club
@@ -62,7 +62,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                sx={{ color: 'text.secondary', '&:hover': { color: 'secondary.main' } }}
+                sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
               >
                 <FacebookIcon />
               </IconButton>
@@ -72,7 +72,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                sx={{ color: 'text.secondary', '&:hover': { color: 'secondary.main' } }}
+                sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
               >
                 <InstagramIcon />
               </IconButton>
@@ -81,7 +81,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-            <Typography variant="h6" sx={{ mb: 2, color: 'secondary.main' }}>
+            <Typography variant="h6" sx={{ mb: 2, color: 'primary.main' }}>
               Quick Links
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.75 }}>
@@ -94,7 +94,7 @@ export default function Footer() {
                   sx={{
                     color: 'text.secondary',
                     fontSize: '0.875rem',
-                    '&:hover': { color: 'secondary.main' },
+                    '&:hover': { color: 'primary.main' },
                     transition: 'color 0.2s',
                   }}
                 >
@@ -106,22 +106,22 @@ export default function Footer() {
 
           {/* Contact */}
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-            <Typography variant="h6" sx={{ mb: 2, color: 'secondary.main' }}>
+            <Typography variant="h6" sx={{ mb: 2, color: 'primary.main' }}>
               Find Us
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, mb: 1.5 }}>
-              <LocationOnIcon sx={{ color: 'secondary.main', fontSize: 20, mt: 0.25, flexShrink: 0 }} />
+              <LocationOnIcon sx={{ color: 'primary.main', fontSize: 20, mt: 0.25, flexShrink: 0 }} />
               <Typography variant="body2" color="text.secondary">
                 6600 Cartwright Rd<br />
                 Boise, ID 83714
               </Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <EmailIcon sx={{ color: 'secondary.main', fontSize: 20, flexShrink: 0 }} />
+              <EmailIcon sx={{ color: 'primary.main', fontSize: 20, flexShrink: 0 }} />
               <Link
                 href="mailto:info@omcracing.com"
                 underline="none"
-                sx={{ color: 'text.secondary', fontSize: '0.875rem', '&:hover': { color: 'secondary.main' } }}
+                sx={{ color: 'text.secondary', fontSize: '0.875rem', '&:hover': { color: 'primary.main' } }}
               >
                 info@omcracing.com
               </Link>

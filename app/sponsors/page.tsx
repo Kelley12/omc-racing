@@ -25,11 +25,11 @@ export default function SponsorsPage() {
   return (
     <>
       {/* Page header */}
-      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'secondary.main' }}>
+      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'primary.main' }}>
         <Container maxWidth="lg">
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
-            <FavoriteIcon sx={{ color: 'secondary.main', fontSize: 40 }} />
-            <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em' }}>Proud Partners</Typography>
+            <FavoriteIcon sx={{ color: 'primary.main', fontSize: 40 }} />
+            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>Proud Partners</Typography>
           </Box>
           <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '5rem' }, mb: 3 }}>Our Sponsors</Typography>
           <Typography color="text.secondary" sx={{ maxWidth: 620, fontSize: '1.1rem' }}>
@@ -44,7 +44,7 @@ export default function SponsorsPage() {
 
           {titleSponsors.length > 0 && (
             <Box sx={{ mb: 8 }}>
-              <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
+              <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
                 Title Sponsors
               </Typography>
               <Typography variant="h2" sx={{ mb: 5, fontSize: { xs: '2rem', md: '3rem' } }}>Top-Level Partners</Typography>
@@ -66,7 +66,7 @@ export default function SponsorsPage() {
                         minHeight: 160,
                         border: '1px solid rgba(255,255,255,0.15)',
                         transition: 'border-color 0.2s, transform 0.2s',
-                        '&:hover': { borderColor: 'secondary.main', transform: 'translateY(-3px)' },
+                        '&:hover': { borderColor: 'primary.main', transform: 'translateY(-3px)' },
                       }}
                     >
                       <Typography
@@ -75,7 +75,7 @@ export default function SponsorsPage() {
                       >
                         {sponsor.name}
                       </Typography>
-                      <OpenInNewIcon sx={{ color: 'secondary.main', fontSize: 16, opacity: 0.6 }} />
+                      <OpenInNewIcon sx={{ color: 'primary.main', fontSize: 16, opacity: 0.6 }} />
                     </Card>
                   </Grid>
                 ))}
@@ -108,7 +108,7 @@ export default function SponsorsPage() {
                         borderRadius: 1,
                         textDecoration: 'none',
                         transition: 'border-color 0.2s',
-                        '&:hover': { borderColor: 'secondary.main' },
+                        '&:hover': { borderColor: 'primary.main' },
                       }}
                     >
                       <Typography variant="body1" sx={{ color: 'text.secondary', fontWeight: 600, textAlign: 'center' }}>

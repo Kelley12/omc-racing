@@ -22,11 +22,11 @@ export default function ContactPage() {
   return (
     <>
       {/* Page header */}
-      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'secondary.main' }}>
+      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'primary.main' }}>
         <Container maxWidth="lg">
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
-            <ContactMailIcon sx={{ color: 'secondary.main', fontSize: 40 }} />
-            <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em' }}>Get in Touch</Typography>
+            <ContactMailIcon sx={{ color: 'primary.main', fontSize: 40 }} />
+            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>Get in Touch</Typography>
           </Box>
           <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '5rem' }, mb: 3 }}>Contact Us</Typography>
           <Typography color="text.secondary" sx={{ maxWidth: 620, fontSize: '1.1rem' }}>
@@ -46,7 +46,7 @@ export default function ContactPage() {
                 <Card sx={{ border: '1px solid rgba(255,255,255,0.08)' }}>
                   <CardContent sx={{ p: 3 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
-                      <EmailIcon sx={{ color: 'secondary.main' }} />
+                      <EmailIcon sx={{ color: 'primary.main' }} />
                       <Typography variant="h6" sx={{ fontFamily: '"Barlow Condensed", sans-serif' }}>Email</Typography>
                     </Box>
                     <Button
@@ -67,7 +67,7 @@ export default function ContactPage() {
                 <Card sx={{ border: '1px solid rgba(255,255,255,0.08)' }}>
                   <CardContent sx={{ p: 3 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
-                      <LocationOnIcon sx={{ color: 'secondary.main' }} />
+                      <LocationOnIcon sx={{ color: 'primary.main' }} />
                       <Typography variant="h6" sx={{ fontFamily: '"Barlow Condensed", sans-serif' }}>Location</Typography>
                     </Box>
                     <Typography color="text.secondary">
@@ -92,7 +92,7 @@ export default function ContactPage() {
                 <Card sx={{ border: '1px solid rgba(255,255,255,0.08)' }}>
                   <CardContent sx={{ p: 3 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
-                      <AccessTimeIcon sx={{ color: 'secondary.main' }} />
+                      <AccessTimeIcon sx={{ color: 'primary.main' }} />
                       <Typography variant="h6" sx={{ fontFamily: '"Barlow Condensed", sans-serif' }}>Facility Hours</Typography>
                     </Box>
                     <Typography color="text.secondary">7:00 AM – 10:00 PM daily</Typography>

@@ -47,7 +47,7 @@ export default function HomePage() {
           <Box sx={{ maxWidth: 700 }}>
             <Typography
               variant="overline"
-              sx={{ color: 'secondary.main', letterSpacing: '0.2em', fontSize: '0.75rem', fontWeight: 700 }}
+              sx={{ color: 'primary.main', letterSpacing: '0.2em', fontSize: '0.75rem', fontWeight: 700 }}
             >
               Est. 1940 · Boise, Idaho
             </Typography>
@@ -56,7 +56,7 @@ export default function HomePage() {
               sx={{ fontSize: { xs: '3rem', sm: '4rem', md: '5.5rem' }, lineHeight: 0.95, mt: 1, mb: 3 }}
             >
               Owyhee
-              <Box component="span" sx={{ color: 'secondary.main', display: 'block' }}>
+              <Box component="span" sx={{ color: 'primary.main', display: 'block' }}>
                 Motorcycle
               </Box>
               Club
@@ -93,7 +93,7 @@ export default function HomePage() {
       {/* Disciplines */}
       <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: 'background.paper' }}>
         <Container maxWidth="lg">
-          <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
+          <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
             What We Ride
           </Typography>
           <Typography variant="h2" sx={{ mb: 6, fontSize: { xs: '2rem', md: '3rem' } }}>
@@ -110,11 +110,11 @@ export default function HomePage() {
                   height: '100%',
                   border: '1px solid rgba(255,255,255,0.12)',
                   transition: 'border-color 0.2s, transform 0.2s',
-                  '&:hover': { borderColor: 'secondary.main', transform: 'translateY(-2px)' },
+                  '&:hover': { borderColor: 'primary.main', transform: 'translateY(-2px)' },
                 }}
               >
                 <CardContent sx={{ p: 4 }}>
-                  <Box sx={{ color: 'secondary.main', mb: 2 }}>
+                  <Box sx={{ color: 'primary.main', mb: 2 }}>
                     <DirectionsBikeIcon sx={{ fontSize: 48 }} />
                   </Box>
                   <Typography variant="h3" sx={{ mb: 2, fontSize: '2rem' }}>Motocross</Typography>
@@ -122,7 +122,7 @@ export default function HomePage() {
                     Full-sized motocross track at approximately 2,400 ft elevation. Open to all skill levels
                     for practice and competitive racing events throughout the season.
                   </Typography>
-                  <Typography sx={{ color: 'secondary.main', fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                  <Typography sx={{ color: 'primary.main', fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                     Learn More →
                   </Typography>
                 </CardContent>
@@ -138,11 +138,11 @@ export default function HomePage() {
                   height: '100%',
                   border: '1px solid rgba(255,255,255,0.08)',
                   transition: 'border-color 0.2s, transform 0.2s',
-                  '&:hover': { borderColor: 'secondary.main', transform: 'translateY(-2px)' },
+                  '&:hover': { borderColor: 'primary.main', transform: 'translateY(-2px)' },
                 }}
               >
                 <CardContent sx={{ p: 4 }}>
-                  <Box sx={{ color: 'secondary.main', mb: 2 }}>
+                  <Box sx={{ color: 'primary.main', mb: 2 }}>
                     <NatureIcon sx={{ fontSize: 48 }} />
                   </Box>
                   <Typography variant="h3" sx={{ mb: 2, fontSize: '2rem' }}>Trials</Typography>
@@ -150,7 +150,7 @@ export default function HomePage() {
                     Technical trials riding area featuring challenging natural obstacles. Endorsed by
                     professionals including 6x National Trials Champion Ryan Young.
                   </Typography>
-                  <Typography sx={{ color: 'secondary.main', fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                  <Typography sx={{ color: 'primary.main', fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                     Learn More →
                   </Typography>
                 </CardContent>
@@ -172,8 +172,8 @@ export default function HomePage() {
             ].map((stat) => (
               <Grid key={stat.label} size={{ xs: 6, md: 3 }}>
                 <Box sx={{ textAlign: 'center' }}>
-                  <Box sx={{ color: 'secondary.main', mb: 1 }}>{stat.icon}</Box>
-                  <Typography variant="h3" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, color: 'secondary.main' }}>
+                  <Box sx={{ color: 'primary.main', mb: 1 }}>{stat.icon}</Box>
+                  <Typography variant="h3" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, color: 'primary.main' }}>
                     {stat.value}
                   </Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.7rem' }}>
@@ -192,7 +192,7 @@ export default function HomePage() {
           <Container maxWidth="lg">
             <Box sx={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', mb: 5, flexWrap: 'wrap', gap: 2 }}>
               <Box>
-                <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
+                <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
                   Latest Updates
                 </Typography>
                 <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
@@ -218,7 +218,7 @@ export default function HomePage() {
                   >
                     <CardActionArea component={Link} href={`/news/${post.slug}`} sx={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                       <CardContent sx={{ p: 3, flex: 1 }}>
-                        <Typography variant="caption" sx={{ color: 'secondary.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                        <Typography variant="caption" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                           {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
                         </Typography>
                         <Typography variant="h5" sx={{ mt: 1, mb: 1.5, fontSize: '1.1rem', lineHeight: 1.3 }}>
@@ -243,7 +243,7 @@ export default function HomePage() {
       {sponsors.length > 0 && (
         <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: 'background.paper', borderTop: '1px solid', borderColor: 'divider' }}>
           <Container maxWidth="lg">
-            <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em', display: 'block', mb: 1, textAlign: 'center' }}>
+            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1, textAlign: 'center' }}>
               Proud Partners
             </Typography>
             <Typography variant="h2" sx={{ mb: 6, textAlign: 'center', fontSize: { xs: '2rem', md: '3rem' } }}>
@@ -274,7 +274,7 @@ export default function HomePage() {
                         minWidth: 200,
                         textDecoration: 'none',
                         transition: 'border-color 0.2s, background 0.2s',
-                        '&:hover': { borderColor: 'secondary.main', backgroundColor: 'rgba(77,142,247,0.1)' },
+                        '&:hover': { borderColor: 'primary.main', backgroundColor: 'rgba(77,142,247,0.1)' },
                       }}
                     >
                       <Typography variant="h6" sx={{ color: 'white', fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700 }}>
@@ -307,7 +307,7 @@ export default function HomePage() {
                         borderRadius: 1,
                         textDecoration: 'none',
                         transition: 'border-color 0.2s',
-                        '&:hover': { borderColor: 'secondary.main' },
+                        '&:hover': { borderColor: 'primary.main' },
                       }}
                     >
                       <Typography variant="body1" sx={{ color: 'text.secondary', fontWeight: 600 }}>

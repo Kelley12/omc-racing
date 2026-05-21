@@ -24,11 +24,11 @@ export default function HistoryPage() {
   return (
     <>
       {/* Page header */}
-      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'secondary.main' }}>
+      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'primary.main' }}>
         <Container maxWidth="lg">
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
-            <HistoryIcon sx={{ color: 'secondary.main', fontSize: 40 }} />
-            <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em' }}>Est. 1940</Typography>
+            <HistoryIcon sx={{ color: 'primary.main', fontSize: 40 }} />
+            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>Est. 1940</Typography>
           </Box>
           <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '5rem' }, mb: 3 }}>Our History</Typography>
           <Typography color="text.secondary" sx={{ maxWidth: 620, fontSize: '1.1rem' }}>
@@ -73,7 +73,7 @@ export default function HistoryPage() {
                   <Box sx={{ flexShrink: 0, width: { xs: 40, md: 120 }, textAlign: { xs: 'left', md: 'right' } }}>
                     <Typography
                       variant="h6"
-                      sx={{ fontFamily: '"Barlow Condensed", sans-serif', color: 'secondary.main', fontSize: { xs: '0.9rem', md: '1rem' }, lineHeight: 1.2 }}
+                      sx={{ fontFamily: '"Barlow Condensed", sans-serif', color: 'primary.main', fontSize: { xs: '0.9rem', md: '1rem' }, lineHeight: 1.2 }}
                     >
                       {event.year}
                     </Typography>
@@ -81,7 +81,7 @@ export default function HistoryPage() {
 
                   {/* Dot */}
                   <Box sx={{ position: 'relative', flexShrink: 0 }}>
-                    <Box sx={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: 'secondary.main', mt: 0.5, boxShadow: '0 0 0 3px rgba(255,255,255,0.12)' }} />
+                    <Box sx={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: 'primary.main', mt: 0.5, boxShadow: '0 0 0 3px rgba(255,255,255,0.12)' }} />
                   </Box>
 
                   {/* Content */}

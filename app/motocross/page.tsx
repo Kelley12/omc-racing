@@ -31,12 +31,12 @@ export default function MotocrossPage() {
   return (
     <>
       {/* Page header */}
-      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'secondary.main', position: 'relative', overflow: 'hidden',
+      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'primary.main', position: 'relative', overflow: 'hidden',
         '&::before': { content: '""', position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 80% 50%, rgba(77,142,247,0.14) 0%, transparent 60%)', pointerEvents: 'none' } }}>
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
-            <DirectionsBikeIcon sx={{ color: 'secondary.main', fontSize: 40 }} />
-            <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em' }}>Discipline</Typography>
+            <DirectionsBikeIcon sx={{ color: 'primary.main', fontSize: 40 }} />
+            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>Discipline</Typography>
           </Box>
           <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '5rem' }, mb: 3 }}>Motocross</Typography>
           <Typography color="text.secondary" sx={{ maxWidth: 620, mb: 4, fontSize: '1.1rem' }}>
@@ -59,7 +59,7 @@ export default function MotocrossPage() {
         <Container maxWidth="lg">
           <Grid container spacing={6} sx={{ alignItems: 'flex-start' }}>
             <Grid size={{ xs: 12, md: 7 }}>
-              <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em' }}>The Track</Typography>
+              <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>The Track</Typography>
               <Typography variant="h2" sx={{ mb: 3, fontSize: { xs: '2rem', md: '2.75rem' } }}>Built for Real Racing</Typography>
               <Typography color="text.secondary" sx={{ mb: 3, lineHeight: 1.8 }}>
                 Situated in the Owyhee foothills west of Boise, the OMC track features the natural terrain
@@ -74,7 +74,7 @@ export default function MotocrossPage() {
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                 {trackFeatures.map((feature) => (
                   <Box key={feature} sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                    <CheckCircleIcon sx={{ color: 'secondary.main', fontSize: 18, flexShrink: 0 }} />
+                    <CheckCircleIcon sx={{ color: 'primary.main', fontSize: 18, flexShrink: 0 }} />
                     <Typography variant="body2" color="text.secondary">{feature}</Typography>
                   </Box>
                 ))}
@@ -84,7 +84,7 @@ export default function MotocrossPage() {
             <Grid size={{ xs: 12, md: 5 }}>
               <Card sx={{ border: '1px solid rgba(255,255,255,0.12)' }}>
                 <CardContent sx={{ p: 4 }}>
-                  <Typography variant="h5" sx={{ mb: 3, fontFamily: '"Barlow Condensed", sans-serif', color: 'secondary.main' }}>
+                  <Typography variant="h5" sx={{ mb: 3, fontFamily: '"Barlow Condensed", sans-serif', color: 'primary.main' }}>
                     Quick Facts
                   </Typography>
                   {[

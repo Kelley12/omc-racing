@@ -35,7 +35,7 @@ export default async function NewsPostPage({ params }: Props) {
           All News
         </Button>
 
-        <Typography variant="caption" sx={{ color: 'secondary.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', mb: 1 }}>
+        <Typography variant="caption" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', mb: 1 }}>
           {formattedDate}
           {post.author && ` · ${post.author}`}
         </Typography>
@@ -52,8 +52,8 @@ export default async function NewsPostPage({ params }: Props) {
             '& ul, & ol': { pl: 3, mb: 2, color: 'text.secondary' },
             '& li': { mb: 0.5, lineHeight: 1.8 },
             '& strong': { color: 'white', fontWeight: 700 },
-            '& a': { color: 'secondary.main', '&:hover': { textDecoration: 'underline' } },
-            '& blockquote': { borderLeft: '3px solid', borderColor: 'secondary.main', pl: 2, my: 3, color: 'text.secondary', fontStyle: 'italic' },
+            '& a': { color: 'primary.main', '&:hover': { textDecoration: 'underline' } },
+            '& blockquote': { borderLeft: '3px solid', borderColor: 'primary.main', pl: 2, my: 3, color: 'text.secondary', fontStyle: 'italic' },
             '& hr': { borderColor: 'divider', my: 4 },
           }}
           dangerouslySetInnerHTML={{ __html: post.content ?? '' }}

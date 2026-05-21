@@ -45,7 +45,7 @@ function EventCard({ event }: { event: CalendarEvent }) {
           py: 2,
         }}
       >
-        <Typography variant="caption" sx={{ color: 'secondary.main', fontWeight: 700, lineHeight: 1 }}>
+        <Typography variant="caption" sx={{ color: 'primary.main', fontWeight: 700, lineHeight: 1 }}>
           {month}
         </Typography>
         <Typography variant="h4" sx={{ color: 'white', lineHeight: 1, fontFamily: '"Barlow Condensed", sans-serif' }}>
@@ -62,7 +62,7 @@ function EventCard({ event }: { event: CalendarEvent }) {
         </Typography>
         {event.location && (
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mb: 1 }}>
-            <LocationOnIcon sx={{ fontSize: 14, color: 'secondary.main' }} />
+            <LocationOnIcon sx={{ fontSize: 14, color: 'primary.main' }} />
             <Typography variant="caption" color="text.secondary">{event.location}</Typography>
           </Box>
         )}
@@ -119,8 +119,8 @@ export default function CalendarPage() {
       <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(180deg, #1A1A1A 0%, #121212 100%)', borderBottom: '1px solid', borderColor: 'divider' }}>
         <Container maxWidth="lg">
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
-            <CalendarMonthIcon sx={{ color: 'secondary.main', fontSize: 40 }} />
-            <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em' }}>Schedule</Typography>
+            <CalendarMonthIcon sx={{ color: 'primary.main', fontSize: 40 }} />
+            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>Schedule</Typography>
           </Box>
           <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '4rem' }, mb: 2 }}>
             Event Calendar
