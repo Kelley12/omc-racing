@@ -140,46 +140,42 @@ export default function TrialsPage() {
             What the Pros Say
           </Typography>
 
-          {/* Ryan Young — YouTube embed */}
-          <Box sx={{ mb: 8 }}>
-            <Typography variant="h5" sx={{ fontFamily: '"Barlow Condensed", sans-serif', mb: 0.5 }}>
-              Ryan Young
-            </Typography>
-            <Typography variant="body2" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', mb: 3 }}>
-              6x National Trials Champion
-            </Typography>
-            <Typography color="text.secondary" sx={{ mb: 3, lineHeight: 1.8, maxWidth: 680 }}>
-              Here is what 6x National Trials Champion Ryan Young had to say about OMC Trials:
-            </Typography>
-            {/* Responsive 16:9 YouTube embed */}
-            <Box sx={{ position: 'relative', paddingTop: '56.25%', borderRadius: 1, overflow: 'hidden', backgroundColor: '#000' }}>
-              <Box
-                component="iframe"
-                src="https://www.youtube.com/embed/oy5aYH4h000"
-                title="Ryan Young OMC Trials Area"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                sx={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  border: 'none',
-                }}
-              />
-            </Box>
-          </Box>
+          <Grid container spacing={4}>
+            {/* Ryan Young — YouTube embed */}
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Typography variant="h5" sx={{ fontFamily: '"Barlow Condensed", sans-serif', mb: 0.5 }}>
+                Ryan Young
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', mb: 2 }}>
+                6x National Trials Champion
+              </Typography>
+              <Box sx={{ position: 'relative', paddingTop: '56.25%', borderRadius: 1, overflow: 'hidden', backgroundColor: '#000' }}>
+                <Box
+                  component="iframe"
+                  src="https://www.youtube.com/embed/oy5aYH4h000"
+                  title="Ryan Young OMC Trials Area"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    border: 'none',
+                  }}
+                />
+              </Box>
+            </Grid>
 
-          {/* Taylor Robert — self-hosted video */}
-          <Box>
-            <Typography variant="h5" sx={{ fontFamily: '"Barlow Condensed", sans-serif', mb: 0.5 }}>
-              Taylor Robert
-            </Typography>
-            <Typography variant="body2" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', mb: 3 }}>
-              Professional Trials &amp; Enduro Rider
-            </Typography>
-            <Box sx={{ maxWidth: 640 }}>
+            {/* Taylor Robert — self-hosted video */}
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Typography variant="h5" sx={{ fontFamily: '"Barlow Condensed", sans-serif', mb: 0.5 }}>
+                Taylor Robert
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', mb: 2 }}>
+                Professional Trials &amp; Enduro Rider
+              </Typography>
               <Box
                 component="video"
                 controls
@@ -191,8 +187,8 @@ export default function TrialsPage() {
                   backgroundColor: '#000',
                 }}
               />
-            </Box>
-          </Box>
+            </Grid>
+          </Grid>
         </Container>
       </Box>
 
@@ -221,7 +217,7 @@ export default function TrialsPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   p: 2.5,
-                  backgroundColor: '#ffffff',
+                  backgroundColor: '#d8d8d8',
                   borderRadius: 1,
                   width: { xs: 140, sm: 160 },
                   height: 100,
@@ -257,7 +253,7 @@ export default function TrialsPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   p: 2,
-                  backgroundColor: '#ffffff',
+                  backgroundColor: '#d8d8d8',
                   borderRadius: 1,
                   width: { xs: 110, sm: 130 },
                   height: 80,
