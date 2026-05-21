@@ -1,0 +1,101 @@
+backend:
+  name: github
+  repo: Kelley12/omc-racing
+  branch: master
+  base_url: https://api.omcracing.com  # OAuth proxy Lambda endpoint (set up during AWS deploy)
+  auth_endpoint: auth
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+# Publish immediately on save (no draft workflow needed for a small club site)
+publish_mode: simple
+
+collections:
+
+  # ── Track Status (single document) ──────────────────────────────────────
+  - name: track_status
+    label: Track Status
+    files:
+      - name: track_status
+        label: Current Track Status
+        file: content/track-status.json
+        fields:
+          - label: Status
+            name: status
+            widget: select
+            options:
+              - Open
+              - Closed
+              - Limited
+            default: Open
+          - label: Message
+            name: message
+            widget: text
+            hint: "Brief description shown in the banner (e.g. 'Track is in great shape — all sections open')"
+          - label: Updated At
+            name: updated_at
+            widget: datetime
+            format: "YYYY-MM-DDTHH:mm:ssZ"
+            hint: Set this to today's date/time when you update the status
+
+  # ── News Posts ───────────────────────────────────────────────────────────
+  - name: news
+    label: News
+    folder: content/news
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        time_format: false
+      - label: Author
+        name: author
+        widget: string
+        required: false
+        default: OMC Board
+      - label: Excerpt
+        name: excerpt
+        widget: text
+        required: false
+        hint: Short summary shown on the news listing page and homepage
+      - label: Featured Image
+        name: image
+        widget: image
+        required: false
+      - label: Body
+        name: body
+        widget: markdown
+
+  # ── Sponsors ─────────────────────────────────────────────────────────────
+  - name: sponsors
+    label: Sponsors
+    folder: content/sponsors
+    create: true
+    extension: json
+    format: json
+    slug: "{{fields.name | slugify}}"
+    fields:
+      - label: Name
+        name: name
+        widget: string
+      - label: Website URL
+        name: url
+        widget: string
+      - label: Tier
+        name: tier
+        widget: select
+        options:
+          - Title
+          - Supporting
+        default: Supporting
+      - label: Logo
+        name: logo
+        widget: image
+        required: false
+        hint: Optional — if no logo is provided, the sponsor name will be displayed as text

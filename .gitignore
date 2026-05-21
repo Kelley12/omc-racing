@@ -34,3 +34,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# OpenTofu / Terraform
+infrastructure/.terraform/
+infrastructure/.terraform.lock.hcl
+infrastructure/.build/
+infrastructure/*.tfstate
+infrastructure/*.tfstate.backup
+infrastructure/*.tfvars
+
+# OS
+.DS_Store
