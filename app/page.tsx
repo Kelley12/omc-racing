@@ -6,7 +6,6 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActionArea from '@mui/material/CardActionArea';
-import Divider from '@mui/material/Divider';
 import Link from 'next/link';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import NatureIcon from '@mui/icons-material/Nature';
@@ -14,14 +13,20 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import GroupIcon from '@mui/icons-material/Group';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import TrackStatusBanner from '@/components/TrackStatusBanner';
-import { getTrackStatus, getAllNewsPosts, getAllSponsors } from '@/lib/content';
+import { getTrackStatus, getAllNewsPosts } from '@/lib/content';
+
+// Title sponsors — shown large on the homepage
+const titleSponsors = [
+  { name: "Carl's Cycle", url: 'https://carlscycle.com', logo: '/images/sponsors/carls-sponsor-logo.jpeg' },
+  { name: 'Fly Racing', url: 'https://flyracing.com', logo: '/images/sponsors/fly-racing-logo.png' },
+  { name: 'FirePower Parts', url: 'https://firepowerparts.com', logo: '/images/sponsors/FirePower-ComboMark-Color.png' },
+  { name: 'Shinko Tire USA', url: 'https://shinkotireusa.com', logo: '/images/sponsors/ShinkoLogo_Fullcolor_Black_2019-01.png' },
+];
+
 
 export default function HomePage() {
   const trackStatus = getTrackStatus();
   const newsPosts = getAllNewsPosts().slice(0, 3);
-  const sponsors = getAllSponsors();
-  const titleSponsors = sponsors.filter((s) => s.tier === 'Title');
-  const supportingSponsors = sponsors.filter((s) => s.tier === 'Supporting');
 
   return (
     <>
@@ -240,93 +245,57 @@ export default function HomePage() {
       )}
 
       {/* Sponsors */}
-      {sponsors.length > 0 && (
-        <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: 'background.paper', borderTop: '1px solid', borderColor: 'divider' }}>
-          <Container maxWidth="lg">
-            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1, textAlign: 'center' }}>
-              Proud Partners
-            </Typography>
-            <Typography variant="h2" sx={{ mb: 6, textAlign: 'center', fontSize: { xs: '2rem', md: '3rem' } }}>
-              Our Sponsors
-            </Typography>
+      <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: 'background.paper', borderTop: '1px solid', borderColor: 'divider' }}>
+        <Container maxWidth="lg">
+          <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1, textAlign: 'center' }}>
+            Proud Partners
+          </Typography>
+          <Typography variant="h2" sx={{ mb: 6, textAlign: 'center', fontSize: { xs: '2rem', md: '3rem' } }}>
+            Our Sponsors
+          </Typography>
 
-            {titleSponsors.length > 0 && (
-              <>
-                <Typography variant="overline" color="text.secondary" sx={{ display: 'block', textAlign: 'center', mb: 3 }}>
-                  Title Sponsors
-                </Typography>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 2, mb: 5 }}>
-                  {titleSponsors.map((sponsor) => (
-                    <Box
-                      key={sponsor.name}
-                      component="a"
-                      href={sponsor.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        px: 4,
-                        py: 2.5,
-                        border: '1px solid rgba(255,255,255,0.15)',
-                        borderRadius: 1,
-                        minWidth: 200,
-                        textDecoration: 'none',
-                        transition: 'border-color 0.2s, background 0.2s',
-                        '&:hover': { borderColor: 'primary.main', backgroundColor: 'rgba(77,142,247,0.1)' },
-                      }}
-                    >
-                      <Typography variant="h6" sx={{ color: 'white', fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700 }}>
-                        {sponsor.name}
-                      </Typography>
-                    </Box>
-                  ))}
-                </Box>
-              </>
-            )}
+          {/* Title sponsors — large tiles */}
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 2, mb: 6 }}>
+            {titleSponsors.map((sponsor) => (
+              <Box
+                key={sponsor.name}
+                component="a"
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={sponsor.name}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  p: 3,
+                  backgroundColor: '#d8d8d8',
+                  borderRadius: 1,
+                  width: { xs: 140, sm: 180 },
+                  height: 110,
+                  flexShrink: 0,
+                  textDecoration: 'none',
+                  transition: 'opacity 0.2s, box-shadow 0.2s',
+                  '&:hover': { opacity: 0.85, boxShadow: '0 0 0 2px #4d8ef7' },
+                }}
+              >
+                <Box
+                  component="img"
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  sx={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                />
+              </Box>
+            ))}
+          </Box>
 
-            {supportingSponsors.length > 0 && (
-              <>
-                <Divider sx={{ mb: 4 }} />
-                <Typography variant="overline" color="text.secondary" sx={{ display: 'block', textAlign: 'center', mb: 3 }}>
-                  Supporting Sponsors
-                </Typography>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 2 }}>
-                  {supportingSponsors.map((sponsor) => (
-                    <Box
-                      key={sponsor.name}
-                      component="a"
-                      href={sponsor.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{
-                        px: 3,
-                        py: 1.5,
-                        border: '1px solid rgba(255,255,255,0.12)',
-                        borderRadius: 1,
-                        textDecoration: 'none',
-                        transition: 'border-color 0.2s',
-                        '&:hover': { borderColor: 'primary.main' },
-                      }}
-                    >
-                      <Typography variant="body1" sx={{ color: 'text.secondary', fontWeight: 600 }}>
-                        {sponsor.name}
-                      </Typography>
-                    </Box>
-                  ))}
-                </Box>
-              </>
-            )}
-
-            <Box sx={{ textAlign: 'center', mt: 5 }}>
-              <Button component={Link} href="/sponsors" variant="outlined" color="primary">
-                View All Sponsors
-              </Button>
-            </Box>
-          </Container>
-        </Box>
-      )}
+          <Box sx={{ textAlign: 'center' }}>
+            <Button component={Link} href="/sponsors" variant="outlined" color="primary">
+              View All Sponsors
+            </Button>
+          </Box>
+        </Container>
+      </Box>
 
       {/* CTA */}
       <Box
