@@ -220,9 +220,8 @@ export default function TrialsPage() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  p: 3,
-                  backgroundColor: 'rgba(255,255,255,0.08)',
-                  border: '1px solid rgba(255,255,255,0.12)',
+                  p: 2.5,
+                  backgroundColor: '#ffffff',
                   borderRadius: 1,
                   width: { xs: 140, sm: 160 },
                   height: 100,
@@ -237,8 +236,6 @@ export default function TrialsPage() {
                     maxWidth: '100%',
                     maxHeight: '100%',
                     objectFit: 'contain',
-                    filter: 'brightness(0) invert(1)',
-                    opacity: 0.85,
                   }}
                 />
               </Box>
@@ -260,8 +257,7 @@ export default function TrialsPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   p: 2,
-                  backgroundColor: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  backgroundColor: '#ffffff',
                   borderRadius: 1,
                   width: { xs: 110, sm: 130 },
                   height: 80,
@@ -276,8 +272,6 @@ export default function TrialsPage() {
                     maxWidth: '100%',
                     maxHeight: '100%',
                     objectFit: 'contain',
-                    filter: 'brightness(0) invert(1)',
-                    opacity: 0.75,
                   }}
                 />
               </Box>
