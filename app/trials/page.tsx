@@ -3,11 +3,9 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
+import Divider from '@mui/material/Divider';
 import Link from 'next/link';
 import NatureIcon from '@mui/icons-material/Nature';
-import StarIcon from '@mui/icons-material/Star';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
@@ -15,37 +13,64 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Trials',
-  description: 'OMC trials riding area — technical natural obstacles, endorsed by pro riders including Ryan Young.',
+  description: 'OMC trials riding area — natural rocky terrain with challenging obstacles, endorsed by 6x National Champion Ryan Young and pro rider Taylor Robert.',
 };
+
+// Sponsor data — logos are self-hosted to survive the WordPress migration
+const primarySponsors = [
+  { name: 'Rock Placing Co.', logo: '/images/trials-sponsors/Rock-Placing-Co.png' },
+  { name: 'Beta', logo: '/images/trials-sponsors/beta-logo-1024x979.png' },
+  { name: 'ISMI', logo: '/images/trials-sponsors/ISMI-Logo.png' },
+  { name: 'Rekluse', logo: '/images/trials-sponsors/rekluse.jpeg' },
+];
+
+const additionalSponsors = [
+  { name: 'Sawtooth PT', logo: '/images/trials-sponsors/sawtooth-pt.png' },
+  { name: 'Doc', logo: '/images/trials-sponsors/doc.jpeg' },
+  { name: "Carl's Cycle", logo: '/images/trials-sponsors/carlscycle-logo.png' },
+  { name: 'Snake River', logo: '/images/trials-sponsors/snake-river.png' },
+  { name: 'Les Schwab', logo: '/images/trials-sponsors/les-schwab.png' },
+];
 
 const areaFeatures = [
   'Natural rocky terrain with challenging obstacles',
   'Located just left of the gate, below the arenacross track',
   'Suitable for all skill levels — beginner to expert',
-  'Practice area open year-round',
+  'Practice area open year-round for members',
   'Club-organized trials events',
-];
-
-const proEndorsements = [
-  { name: 'Ryan Young', title: '6x AMA National Trials Champion', note: 'Has ridden and endorsed the OMC trials area.' },
-  { name: 'Taylor Robert', title: 'Professional trials & enduro rider', note: 'Has ridden at the OMC facility.' },
 ];
 
 export default function TrialsPage() {
   return (
     <>
       {/* Page header */}
-      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'primary.main', position: 'relative', overflow: 'hidden',
-        '&::before': { content: '""', position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 20% 50%, rgba(77,142,247,0.14) 0%, transparent 60%)', pointerEvents: 'none' } }}>
+      <Box
+        sx={{
+          py: { xs: 6, md: 10 },
+          background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)',
+          borderBottom: '2px solid',
+          borderColor: 'primary.main',
+          position: 'relative',
+          overflow: 'hidden',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            inset: 0,
+            background: 'radial-gradient(ellipse at 20% 50%, rgba(77,142,247,0.14) 0%, transparent 60%)',
+            pointerEvents: 'none',
+          },
+        }}
+      >
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
             <NatureIcon sx={{ color: 'primary.main', fontSize: 40 }} />
             <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>Discipline</Typography>
           </Box>
           <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '5rem' }, mb: 3 }}>Trials</Typography>
-          <Typography color="text.secondary" sx={{ maxWidth: 620, mb: 4, fontSize: '1.1rem' }}>
-            The OMC trials area features natural rocky terrain with challenging obstacles that will push
-            riders of any skill level. Endorsed by some of the best trials riders in the country.
+          <Typography color="text.secondary" sx={{ maxWidth: 680, mb: 4, fontSize: '1.1rem', lineHeight: 1.7 }}>
+            OMC is pleased to announce a trials riding practice area! Located just left of the gate,
+            below the arenacross track — offering challenging obstacles and features for skill development
+            in trials riding.
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
             <Button component={Link} href="/calendar" variant="contained" color="primary" endIcon={<ArrowForwardIcon />} size="large">
@@ -66,16 +91,11 @@ export default function TrialsPage() {
               <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>The Riding Area</Typography>
               <Typography variant="h2" sx={{ mb: 3, fontSize: { xs: '2rem', md: '2.75rem' } }}>Natural Terrain, Real Challenge</Typography>
               <Typography color="text.secondary" sx={{ mb: 3, lineHeight: 1.8 }}>
-                The OMC trials area is located just to the left of the main gate, below the arenacross
-                track. The terrain features natural rocky outcroppings and technical obstacles that make
-                for authentic trials riding — not manufactured difficulty.
+                The OMC trials area features natural rocky terrain with the kind of authentic obstacles
+                that make trials riding so demanding. Whether you&apos;re just starting out or an experienced
+                trials rider, the area has sections to challenge your skill and improve your technique.
               </Typography>
-              <Typography color="text.secondary" sx={{ mb: 4, lineHeight: 1.8 }}>
-                Whether you&apos;re just starting out or an experienced trials rider, the area has sections
-                to challenge your skill and improve your technique.
-              </Typography>
-              <Typography variant="h6" sx={{ mb: 2, fontFamily: '"Barlow Condensed", sans-serif' }}>Area Features</Typography>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, mb: 4 }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                 {areaFeatures.map((feature) => (
                   <Box key={feature} sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
                     <CheckCircleIcon sx={{ color: 'primary.main', fontSize: 18, flexShrink: 0 }} />
@@ -86,38 +106,183 @@ export default function TrialsPage() {
             </Grid>
 
             <Grid size={{ xs: 12, md: 5 }}>
-              <Card sx={{ border: '1px solid rgba(255,255,255,0.12)', mb: 3 }}>
-                <CardContent sx={{ p: 4 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 3 }}>
-                    <StarIcon sx={{ color: 'primary.main' }} />
-                    <Typography variant="h6" sx={{ fontFamily: '"Barlow Condensed", sans-serif', color: 'primary.main' }}>
-                      Pro Endorsements
-                    </Typography>
-                  </Box>
-                  {proEndorsements.map((pro) => (
-                    <Box key={pro.name} sx={{ mb: 2, pb: 2, borderBottom: '1px solid', borderColor: 'divider', '&:last-child': { mb: 0, pb: 0, borderBottom: 'none' } }}>
-                      <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>{pro.name}</Typography>
-                      <Typography variant="caption" sx={{ color: 'primary.main', display: 'block', mb: 0.5 }}>{pro.title}</Typography>
-                      <Typography variant="body2" color="text.secondary">{pro.note}</Typography>
-                    </Box>
-                  ))}
-                </CardContent>
-              </Card>
-
-              <Card sx={{ border: '1px solid rgba(255,255,255,0.08)' }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Typography variant="h6" sx={{ mb: 1, fontFamily: '"Barlow Condensed", sans-serif' }}>Trials Membership</Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                    Trials membership is available as a standalone option or combined with motocross.
-                    Trials-only membership is priced separately from the full motocross membership.
-                  </Typography>
-                  <Button component={Link} href="/membership" variant="outlined" color="primary" size="small">
-                    View Membership Options →
-                  </Button>
-                </CardContent>
-              </Card>
+              <Box
+                sx={{
+                  p: { xs: 3, md: 4 },
+                  border: '1px solid rgba(77,142,247,0.3)',
+                  borderRadius: 1,
+                  backgroundColor: 'rgba(77,142,247,0.06)',
+                }}
+              >
+                <Typography variant="h6" sx={{ fontFamily: '"Barlow Condensed", sans-serif', mb: 1 }}>Trials Membership</Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.7 }}>
+                  Trials membership is available as a standalone option or combined with motocross.
+                  Trials-only membership is priced separately from the full motocross membership.
+                </Typography>
+                <Button component={Link} href="/membership" variant="text" color="primary" size="small" sx={{ pl: 0 }}>
+                  View Membership Options →
+                </Button>
+              </Box>
             </Grid>
           </Grid>
+        </Container>
+      </Box>
+
+      <Divider />
+
+      {/* Pro rider videos */}
+      <Box sx={{ py: { xs: 6, md: 10 } }}>
+        <Container maxWidth="lg">
+          <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
+            Pro Riders
+          </Typography>
+          <Typography variant="h2" sx={{ mb: 8, fontSize: { xs: '2rem', md: '2.75rem' } }}>
+            What the Pros Say
+          </Typography>
+
+          {/* Ryan Young — YouTube embed */}
+          <Box sx={{ mb: 8 }}>
+            <Typography variant="h5" sx={{ fontFamily: '"Barlow Condensed", sans-serif', mb: 0.5 }}>
+              Ryan Young
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', mb: 3 }}>
+              6x National Trials Champion
+            </Typography>
+            <Typography color="text.secondary" sx={{ mb: 3, lineHeight: 1.8, maxWidth: 680 }}>
+              Here is what 6x National Trials Champion Ryan Young had to say about OMC Trials:
+            </Typography>
+            {/* Responsive 16:9 YouTube embed */}
+            <Box sx={{ position: 'relative', paddingTop: '56.25%', borderRadius: 1, overflow: 'hidden', backgroundColor: '#000' }}>
+              <Box
+                component="iframe"
+                src="https://www.youtube.com/embed/oy5aYH4h000"
+                title="Ryan Young OMC Trials Area"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                sx={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  border: 'none',
+                }}
+              />
+            </Box>
+          </Box>
+
+          {/* Taylor Robert — self-hosted video */}
+          <Box>
+            <Typography variant="h5" sx={{ fontFamily: '"Barlow Condensed", sans-serif', mb: 0.5 }}>
+              Taylor Robert
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', mb: 3 }}>
+              Professional Trials &amp; Enduro Rider
+            </Typography>
+            <Box sx={{ maxWidth: 640 }}>
+              <Box
+                component="video"
+                controls
+                src="/videos/taylor-robert.mov"
+                sx={{
+                  width: '100%',
+                  display: 'block',
+                  borderRadius: 1,
+                  backgroundColor: '#000',
+                }}
+              />
+            </Box>
+          </Box>
+        </Container>
+      </Box>
+
+      <Divider />
+
+      {/* Sponsors */}
+      <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: 'background.paper' }}>
+        <Container maxWidth="lg">
+          <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
+            Community Support
+          </Typography>
+          <Typography variant="h2" sx={{ mb: 3, fontSize: { xs: '2rem', md: '2.75rem' } }}>
+            Trials Area Sponsors
+          </Typography>
+          <Typography color="text.secondary" sx={{ mb: 6, lineHeight: 1.8 }}>
+            This area has been built and expanded thanks to generous donations from the following sponsors.
+          </Typography>
+
+          {/* Primary sponsors */}
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3, mb: 6, justifyContent: { xs: 'center', md: 'flex-start' } }}>
+            {primarySponsors.map((sponsor) => (
+              <Box
+                key={sponsor.name}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  p: 3,
+                  backgroundColor: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  borderRadius: 1,
+                  width: { xs: 140, sm: 160 },
+                  height: 100,
+                  flexShrink: 0,
+                }}
+              >
+                <Box
+                  component="img"
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  sx={{
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    objectFit: 'contain',
+                    filter: 'brightness(0) invert(1)',
+                    opacity: 0.85,
+                  }}
+                />
+              </Box>
+            ))}
+          </Box>
+
+          <Divider sx={{ mb: 5 }} />
+
+          {/* Additional sponsors */}
+          <Typography color="text.secondary" sx={{ mb: 3, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+            Thank you to additional sponsors for making the trials area possible
+          </Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
+            {additionalSponsors.map((sponsor) => (
+              <Box
+                key={sponsor.name}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  p: 2,
+                  backgroundColor: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  borderRadius: 1,
+                  width: { xs: 110, sm: 130 },
+                  height: 80,
+                  flexShrink: 0,
+                }}
+              >
+                <Box
+                  component="img"
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  sx={{
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    objectFit: 'contain',
+                    filter: 'brightness(0) invert(1)',
+                    opacity: 0.75,
+                  }}
+                />
+              </Box>
+            ))}
+          </Box>
         </Container>
       </Box>
     </>
