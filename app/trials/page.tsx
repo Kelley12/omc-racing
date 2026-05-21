@@ -182,6 +182,7 @@ export default function TrialsPage() {
                 src="/videos/taylor-robert.mov"
                 sx={{
                   width: '100%',
+                  maxHeight: 320,
                   display: 'block',
                   borderRadius: 1,
                   backgroundColor: '#000',
