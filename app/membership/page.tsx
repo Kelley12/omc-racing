@@ -25,12 +25,12 @@ export const metadata: Metadata = {
 };
 
 const memberBenefits = [
-  'Year-round riding access during facility hours (7am – 10pm)',
+  'Year-round track access 7am – 9pm daily (except race days and day prior)',
+  'Members-only Watered Wednesday practices (Memorial Day through Labor Day)',
   'Voting rights at monthly club meetings',
-  'Discounts on entry fees for OMC events',
+  'Participation in all club social functions',
   'Access to work parties and club events',
   'Electronic gate card (one-time $25 fee)',
-  'Ability to bring guests to practice sessions',
 ];
 
 export default function MembershipPage() {
@@ -64,8 +64,8 @@ export default function MembershipPage() {
             </Typography>
             <Grid container spacing={3}>
               {[
-                { title: 'Waiver', body: 'A notarized or witnessed liability waiver is required for all members and must be submitted with your application.' },
-                { title: 'Meeting Attendance', body: 'Attendance at monthly club meetings is required. Meetings are held the 3rd Friday of each month at 7pm.' },
+                { title: 'Waiver', body: 'An annual waiver must be completed on the official form — no copies or prints allowed. Must be witnessed (or notarized if completing remotely). Available at meetings, events, or by contacting a board member.' },
+                { title: 'Meeting Attendance', body: 'Attend monthly club meetings held the first Thursday of each month at 7:00 PM. To be voted in, attend 2 meetings and work half your required hours, or attend 3 meetings.' },
                 { title: 'Good Standing', body: 'Members must be in good standing and of good moral character as determined by the club board.' },
                 { title: 'Volunteer Hours', body: 'Working members must complete the required number of volunteer hours (half due by June 1, remaining by season end). Non-working memberships waive hours in exchange for higher dues.' },
               ].map((req) => (
@@ -118,7 +118,7 @@ export default function MembershipPage() {
                       {[
                         { cat: 'Working Household', mx: '$375', trials: '$200', hours: '20' },
                         { cat: 'Additional Youth (11–21)', mx: '$100', trials: '$25', hours: '5' },
-                        { cat: 'Additional Adult (22+)', mx: '$200', trials: '$100', hours: '10' },
+                        { cat: 'Additional Adult (22+)', mx: '$200', trials: '$200', hours: '10' },
                       ].map((row) => (
                         <TableRow key={row.cat} sx={{ '&:last-child td': { border: 0 } }}>
                           <TableCell sx={{ color: 'text.primary', fontSize: '0.875rem' }}>{row.cat}</TableCell>
@@ -202,24 +202,45 @@ export default function MembershipPage() {
               <Typography variant="h4" sx={{ mb: 2, fontSize: '1.75rem', fontFamily: '"Barlow Condensed", sans-serif' }}>
                 Ready to Apply?
               </Typography>
-              <Typography color="text.secondary" sx={{ mb: 3, maxWidth: 600 }}>
-                Download the membership application, complete it with all required signatures and notarization,
-                and bring it to the next club meeting or mail it to the address on the form.
+              <Typography color="text.secondary" sx={{ mb: 1, maxWidth: 640 }}>
+                Download the membership application for your discipline, complete it with all required
+                signatures, and bring it to the next club meeting or mail it with a check to:
               </Typography>
-              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+              <Typography variant="body2" sx={{ mb: 3, color: 'white', fontWeight: 600 }}>
+                OMC Membership · P.O. Box 865 · Meridian, ID 83680
+              </Typography>
+              <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.1em', display: 'block', mb: 1.5 }}>
+                Membership Applications
+              </Typography>
+              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mb: 3 }}>
                 <Button
                   component="a"
-                  href="/pdfs/membership-application.pdf"
+                  href="/files/membership-mx-2026.pdf"
                   download
                   variant="contained"
                   color="primary"
                   startIcon={<DownloadIcon />}
                 >
-                  Download Application
+                  Motocross Application
                 </Button>
                 <Button
                   component="a"
-                  href="/pdfs/club-rules.pdf"
+                  href="/files/membership-trials-2026.pdf"
+                  download
+                  variant="contained"
+                  color="primary"
+                  startIcon={<DownloadIcon />}
+                >
+                  Trials Application
+                </Button>
+              </Box>
+              <Typography variant="overline" sx={{ color: 'text.secondary', letterSpacing: '0.1em', display: 'block', mb: 1.5 }}>
+                Club Documents
+              </Typography>
+              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                <Button
+                  component="a"
+                  href="/files/club-rules-2026.pdf"
                   download
                   variant="outlined"
                   color="secondary"
@@ -229,13 +250,23 @@ export default function MembershipPage() {
                 </Button>
                 <Button
                   component="a"
-                  href="/pdfs/constitution.pdf"
+                  href="/files/constitution-bylaws.pdf"
                   download
                   variant="outlined"
                   color="secondary"
                   startIcon={<DownloadIcon />}
                 >
-                  Constitution
+                  Constitution &amp; By-Laws
+                </Button>
+                <Button
+                  component="a"
+                  href="/files/flagger-form.pdf"
+                  download
+                  variant="outlined"
+                  color="secondary"
+                  startIcon={<DownloadIcon />}
+                >
+                  Flagger Form
                 </Button>
               </Box>
             </CardContent>
