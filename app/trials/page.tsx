@@ -36,7 +36,7 @@ export default function TrialsPage() {
     <>
       {/* Page header */}
       <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'secondary.main', position: 'relative', overflow: 'hidden',
-        '&::before': { content: '""', position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 20% 50%, rgba(0,25,135,0.3) 0%, transparent 60%)', pointerEvents: 'none' } }}>
+        '&::before': { content: '""', position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 20% 50%, rgba(77,142,247,0.14) 0%, transparent 60%)', pointerEvents: 'none' } }}>
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
             <NatureIcon sx={{ color: 'secondary.main', fontSize: 40 }} />

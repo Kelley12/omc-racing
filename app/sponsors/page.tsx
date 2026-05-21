@@ -122,7 +122,7 @@ export default function SponsorsPage() {
           )}
 
           {/* Become a sponsor CTA */}
-          <Card sx={{ border: '1px solid rgba(255,255,255,0.12)', backgroundColor: 'rgba(0,25,135,0.2)' }}>
+          <Card sx={{ border: '1px solid rgba(255,255,255,0.12)', backgroundColor: 'rgba(77,142,247,0.1)' }}>
             <CardContent sx={{ p: 4 }}>
               <Typography variant="h4" sx={{ mb: 2, fontFamily: '"Barlow Condensed", sans-serif', fontSize: '1.75rem' }}>
                 Become a Sponsor

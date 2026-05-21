@@ -39,7 +39,7 @@ function EventCard({ event }: { event: CalendarEvent }) {
           alignItems: 'center',
           justifyContent: 'center',
           minWidth: 72,
-          backgroundColor: 'rgba(0,25,135,0.4)',
+          backgroundColor: 'rgba(77,142,247,0.18)',
           borderRight: '1px solid rgba(255,255,255,0.12)',
           px: 2,
           py: 2,

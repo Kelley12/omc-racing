@@ -103,7 +103,7 @@ export default function HistoryPage() {
               p: { xs: 3, md: 5 },
               border: '1px solid rgba(255,255,255,0.15)',
               borderRadius: 1,
-              background: 'linear-gradient(135deg, rgba(0,25,135,0.2) 0%, transparent 100%)',
+              background: 'linear-gradient(135deg, rgba(77,142,247,0.1) 0%, transparent 100%)',
             }}
           >
             <Typography variant="h3" sx={{ mb: 2, fontSize: { xs: '1.5rem', md: '2rem' } }}>

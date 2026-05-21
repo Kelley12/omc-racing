@@ -7,15 +7,15 @@ const theme = createTheme({
     mode: 'dark',
     primary: {
       main: '#001987',
-      light: '#2e44b0',
+      light: '#4d8ef7',
       dark: '#001060',
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#ffffff',
-      light: '#ffffff',
-      dark: '#cccccc',
-      contrastText: '#001987',
+      main: '#4d8ef7',
+      light: '#80b3ff',
+      dark: '#1a5fc9',
+      contrastText: '#ffffff',
     },
     background: {
       default: '#121212',

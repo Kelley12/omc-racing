@@ -197,7 +197,7 @@ export default function MembershipPage() {
           </Box>
 
           {/* Download CTA */}
-          <Card sx={{ border: '1px solid rgba(255,255,255,0.15)', backgroundColor: 'rgba(0,25,135,0.2)' }}>
+          <Card sx={{ border: '1px solid rgba(255,255,255,0.15)', backgroundColor: 'rgba(77,142,247,0.1)' }}>
             <CardContent sx={{ p: 4 }}>
               <Typography variant="h4" sx={{ mb: 2, fontSize: '1.75rem', fontFamily: '"Barlow Condensed", sans-serif' }}>
                 Ready to Apply?

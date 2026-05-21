@@ -38,7 +38,7 @@ export default function HomePage() {
             content: '""',
             position: 'absolute',
             inset: 0,
-            background: 'radial-gradient(ellipse at 70% 50%, rgba(0,25,135,0.4) 0%, transparent 60%)',
+            background: 'radial-gradient(ellipse at 70% 50%, rgba(77,142,247,0.18) 0%, transparent 60%)',
             pointerEvents: 'none',
           },
         }}
@@ -274,7 +274,7 @@ export default function HomePage() {
                         minWidth: 200,
                         textDecoration: 'none',
                         transition: 'border-color 0.2s, background 0.2s',
-                        '&:hover': { borderColor: 'secondary.main', backgroundColor: 'rgba(0,25,135,0.2)' },
+                        '&:hover': { borderColor: 'secondary.main', backgroundColor: 'rgba(77,142,247,0.1)' },
                       }}
                     >
                       <Typography variant="h6" sx={{ color: 'white', fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700 }}>
@@ -332,7 +332,7 @@ export default function HomePage() {
       <Box
         sx={{
           py: { xs: 8, md: 12 },
-          background: 'linear-gradient(135deg, rgba(0,25,135,0.4) 0%, transparent 60%)',
+          background: 'linear-gradient(135deg, rgba(77,142,247,0.18) 0%, transparent 60%)',
           borderTop: '1px solid rgba(255,255,255,0.12)',
         }}
       >
