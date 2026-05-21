@@ -83,6 +83,84 @@ export default function MembershipPage() {
             </Grid>
           </Box>
 
+          {/* Member responsibilities */}
+          <Box sx={{ mb: 8 }}>
+            <Typography color="text.secondary" sx={{ mb: 4, lineHeight: 1.8 }}>
+              After you have accomplished the above and paid your dues, you may be voted into the club
+              and will be able to start enjoying the benefits of being a club member.
+            </Typography>
+
+            <Grid container spacing={3}>
+              {/* Volunteer hours */}
+              <Grid size={{ xs: 12, md: 7 }}>
+                <Card sx={{ height: '100%', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <CardContent sx={{ p: 3 }}>
+                    <Typography variant="h6" sx={{ mb: 2, fontFamily: '"Barlow Condensed", sans-serif', color: 'primary.main' }}>
+                      Volunteer Hours
+                    </Typography>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+                      {[
+                        'A member MUST work 1 event during the year — these hours count toward your required total.',
+                        'You are responsible for tracking your own hours. Work vouchers are provided by OMC and must be legible, signed, and dated by a board member. Keep the yellow copy for your records.',
+                        'Vouchers that are not signed and legible will not be counted.',
+                        'Members who have not completed half their work hours by June 1st will have their gate card deactivated.',
+                        'All hours must be completed by the end of December.',
+                        'The day before each public event is a work day for prep — flaggers are required at each event. Hours can also be earned via grounds clean-up: trash pick-up, weeds, emptying cans, starting gate, fence repair, and more. Contact the Groundskeeper or any board member for details.',
+                      ].map((item, i) => (
+                        <Box key={i} sx={{ display: 'flex', gap: 1.5, alignItems: 'flex-start' }}>
+                          <Box sx={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: 'primary.main', mt: '6px', flexShrink: 0 }} />
+                          <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>{item}</Typography>
+                        </Box>
+                      ))}
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              {/* Access & conduct */}
+              <Grid size={{ xs: 12, md: 5 }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, height: '100%' }}>
+                  <Card sx={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <CardContent sx={{ p: 3 }}>
+                      <Typography variant="h6" sx={{ mb: 2, fontFamily: '"Barlow Condensed", sans-serif', color: 'primary.main' }}>
+                        Club Access
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5, lineHeight: 1.7 }}>
+                        Access is prohibited to anyone who is not a current member in good standing —
+                        this includes proper paperwork and volunteer requirements.
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>
+                        There is a <strong style={{ color: 'white' }}>$100 reinstatement fee</strong> any
+                        time a membership goes into default and is returned to good standing.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+
+                  <Card sx={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <CardContent sx={{ p: 3 }}>
+                      <Typography variant="h6" sx={{ mb: 2, fontFamily: '"Barlow Condensed", sans-serif', color: 'primary.main' }}>
+                        Non-Working Membership
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>
+                        Meeting attendance and volunteer hours are not required for fee-only memberships,
+                        but the membership form, payment, gate card, and official waiver requirements
+                        still apply.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+
+                  <Box sx={{ p: 3, border: '1px solid rgba(77,142,247,0.3)', borderRadius: 1, backgroundColor: 'rgba(77,142,247,0.06)' }}>
+                    <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.8 }}>
+                      All members, regardless of membership type, must follow club rules and maintain
+                      member conduct. We hope you&apos;ll join us in making OMC the{' '}
+                      <strong style={{ color: 'white' }}>BEST in the Valley!</strong>
+                    </Typography>
+                  </Box>
+                </Box>
+              </Grid>
+            </Grid>
+          </Box>
+
           {/* Pricing table */}
           <Box sx={{ mb: 8 }}>
             <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
