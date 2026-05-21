@@ -61,7 +61,7 @@ export default function HistoryPage() {
           <Typography variant="h2" sx={{ mb: 6, fontSize: { xs: '2rem', md: '2.75rem' } }}>Timeline</Typography>
           <Box sx={{ position: 'relative' }}>
             {/* Vertical line */}
-            <Box sx={{ position: 'absolute', left: { xs: 20, md: 120 }, top: 0, bottom: 0, width: 2, backgroundColor: 'rgba(253,220,1,0.15)' }} />
+            <Box sx={{ position: 'absolute', left: { xs: 20, md: 120 }, top: 0, bottom: 0, width: 2, backgroundColor: 'rgba(255,255,255,0.12)' }} />
 
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
               {timeline.map((event) => (
@@ -81,7 +81,7 @@ export default function HistoryPage() {
 
                   {/* Dot */}
                   <Box sx={{ position: 'relative', flexShrink: 0 }}>
-                    <Box sx={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: 'secondary.main', mt: 0.5, boxShadow: '0 0 0 3px rgba(253,220,1,0.15)' }} />
+                    <Box sx={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: 'secondary.main', mt: 0.5, boxShadow: '0 0 0 3px rgba(255,255,255,0.12)' }} />
                   </Box>
 
                   {/* Content */}
@@ -101,9 +101,9 @@ export default function HistoryPage() {
             sx={{
               mt: 10,
               p: { xs: 3, md: 5 },
-              border: '1px solid rgba(253,220,1,0.2)',
+              border: '1px solid rgba(255,255,255,0.15)',
               borderRadius: 1,
-              background: 'linear-gradient(135deg, rgba(253,220,1,0.05) 0%, transparent 100%)',
+              background: 'linear-gradient(135deg, rgba(0,25,135,0.2) 0%, transparent 100%)',
             }}
           >
             <Typography variant="h3" sx={{ mb: 2, fontSize: { xs: '1.5rem', md: '2rem' } }}>

@@ -137,7 +137,7 @@ export default function ContactPage() {
 
             {/* Monthly meetings */}
             <Grid size={{ xs: 12, md: 7 }}>
-              <Card sx={{ border: '1px solid rgba(253,220,1,0.15)', mb: 3 }}>
+              <Card sx={{ border: '1px solid rgba(255,255,255,0.12)', mb: 3 }}>
                 <CardContent sx={{ p: 4 }}>
                   <Typography variant="h4" sx={{ mb: 2, fontFamily: '"Barlow Condensed", sans-serif', fontSize: '1.75rem' }}>
                     Monthly Club Meetings

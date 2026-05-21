@@ -38,7 +38,7 @@ export default function HomePage() {
             content: '""',
             position: 'absolute',
             inset: 0,
-            background: 'radial-gradient(ellipse at 70% 50%, rgba(253,220,1,0.1) 0%, transparent 60%)',
+            background: 'radial-gradient(ellipse at 70% 50%, rgba(0,25,135,0.4) 0%, transparent 60%)',
             pointerEvents: 'none',
           },
         }}
@@ -108,7 +108,7 @@ export default function HomePage() {
                   display: 'block',
                   textDecoration: 'none',
                   height: '100%',
-                  border: '1px solid rgba(253,220,1,0.15)',
+                  border: '1px solid rgba(255,255,255,0.12)',
                   transition: 'border-color 0.2s, transform 0.2s',
                   '&:hover': { borderColor: 'secondary.main', transform: 'translateY(-2px)' },
                 }}
@@ -213,7 +213,7 @@ export default function HomePage() {
                       flexDirection: 'column',
                       border: '1px solid rgba(255,255,255,0.08)',
                       transition: 'border-color 0.2s',
-                      '&:hover': { borderColor: 'rgba(253,220,1,0.3)' },
+                      '&:hover': { borderColor: 'rgba(255,255,255,0.2)' },
                     }}
                   >
                     <CardActionArea component={Link} href={`/news/${post.slug}`} sx={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
@@ -269,12 +269,12 @@ export default function HomePage() {
                         justifyContent: 'center',
                         px: 4,
                         py: 2.5,
-                        border: '1px solid rgba(253,220,1,0.2)',
+                        border: '1px solid rgba(255,255,255,0.15)',
                         borderRadius: 1,
                         minWidth: 200,
                         textDecoration: 'none',
                         transition: 'border-color 0.2s, background 0.2s',
-                        '&:hover': { borderColor: 'secondary.main', backgroundColor: 'rgba(253,220,1,0.05)' },
+                        '&:hover': { borderColor: 'secondary.main', backgroundColor: 'rgba(0,25,135,0.2)' },
                       }}
                     >
                       <Typography variant="h6" sx={{ color: 'white', fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700 }}>
@@ -332,8 +332,8 @@ export default function HomePage() {
       <Box
         sx={{
           py: { xs: 8, md: 12 },
-          background: 'linear-gradient(135deg, rgba(253,220,1,0.1) 0%, transparent 60%)',
-          borderTop: '1px solid rgba(253,220,1,0.15)',
+          background: 'linear-gradient(135deg, rgba(0,25,135,0.4) 0%, transparent 60%)',
+          borderTop: '1px solid rgba(255,255,255,0.12)',
         }}
       >
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>

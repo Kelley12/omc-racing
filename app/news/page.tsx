@@ -48,7 +48,7 @@ export default function NewsPage() {
                       flexDirection: 'column',
                       border: '1px solid rgba(255,255,255,0.08)',
                       transition: 'border-color 0.2s',
-                      '&:hover': { borderColor: 'rgba(253,220,1,0.3)' },
+                      '&:hover': { borderColor: 'rgba(255,255,255,0.2)' },
                     }}
                   >
                     <CardActionArea component={Link} href={`/news/${post.slug}`} sx={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>

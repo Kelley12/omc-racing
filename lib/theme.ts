@@ -12,10 +12,10 @@ const theme = createTheme({
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#fddc01',
-      light: '#fee94d',
-      dark: '#cab000',
-      contrastText: '#121212',
+      main: '#ffffff',
+      light: '#ffffff',
+      dark: '#cccccc',
+      contrastText: '#001987',
     },
     background: {
       default: '#121212',
@@ -87,7 +87,7 @@ const theme = createTheme({
         root: {
           backgroundColor: '#001987',
           backgroundImage: 'none',
-          borderBottom: '3px solid #fddc01',
+          borderBottom: 'none',
         },
       },
     },

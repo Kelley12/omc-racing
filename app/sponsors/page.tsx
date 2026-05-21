@@ -64,7 +64,7 @@ export default function SponsorsPage() {
                         p: 4,
                         textDecoration: 'none',
                         minHeight: 160,
-                        border: '1px solid rgba(253,220,1,0.2)',
+                        border: '1px solid rgba(255,255,255,0.15)',
                         transition: 'border-color 0.2s, transform 0.2s',
                         '&:hover': { borderColor: 'secondary.main', transform: 'translateY(-3px)' },
                       }}
@@ -122,7 +122,7 @@ export default function SponsorsPage() {
           )}
 
           {/* Become a sponsor CTA */}
-          <Card sx={{ border: '1px solid rgba(253,220,1,0.15)', backgroundColor: 'rgba(253,220,1,0.05)' }}>
+          <Card sx={{ border: '1px solid rgba(255,255,255,0.12)', backgroundColor: 'rgba(0,25,135,0.2)' }}>
             <CardContent sx={{ p: 4 }}>
               <Typography variant="h4" sx={{ mb: 2, fontFamily: '"Barlow Condensed", sans-serif', fontSize: '1.75rem' }}>
                 Become a Sponsor

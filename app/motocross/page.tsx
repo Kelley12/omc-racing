@@ -32,7 +32,7 @@ export default function MotocrossPage() {
     <>
       {/* Page header */}
       <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'secondary.main', position: 'relative', overflow: 'hidden',
-        '&::before': { content: '""', position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 80% 50%, rgba(253,220,1,0.08) 0%, transparent 60%)', pointerEvents: 'none' } }}>
+        '&::before': { content: '""', position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 80% 50%, rgba(0,25,135,0.3) 0%, transparent 60%)', pointerEvents: 'none' } }}>
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
             <DirectionsBikeIcon sx={{ color: 'secondary.main', fontSize: 40 }} />
@@ -82,7 +82,7 @@ export default function MotocrossPage() {
             </Grid>
 
             <Grid size={{ xs: 12, md: 5 }}>
-              <Card sx={{ border: '1px solid rgba(253,220,1,0.15)' }}>
+              <Card sx={{ border: '1px solid rgba(255,255,255,0.12)' }}>
                 <CardContent sx={{ p: 4 }}>
                   <Typography variant="h5" sx={{ mb: 3, fontFamily: '"Barlow Condensed", sans-serif', color: 'secondary.main' }}>
                     Quick Facts
@@ -102,7 +102,7 @@ export default function MotocrossPage() {
                 </CardContent>
               </Card>
 
-              <Card sx={{ mt: 3, border: '1px solid rgba(255,255,255,0.08)', backgroundColor: 'rgba(253,220,1,0.05)' }}>
+              <Card sx={{ mt: 3, border: '1px solid rgba(255,255,255,0.08)', backgroundColor: 'rgba(0,25,135,0.2)' }}>
                 <CardContent sx={{ p: 3 }}>
                   <Typography variant="h6" sx={{ mb: 1, fontFamily: '"Barlow Condensed", sans-serif' }}>
                     Non-Members Welcome to Race

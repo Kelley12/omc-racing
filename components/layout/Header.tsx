@@ -52,7 +52,7 @@ export default function Header() {
               }}
             >
               OMC
-              <Box component="span" sx={{ color: 'secondary.main', ml: 0.5 }}>Racing</Box>
+              <Box component="span" sx={{ color: 'rgba(255,255,255,0.7)', ml: 0.5 }}>Racing</Box>
             </Typography>
           </Box>
 
@@ -67,14 +67,14 @@ export default function Header() {
                   href={link.href}
                   size="small"
                   sx={{
-                    color: active ? 'secondary.main' : 'rgba(255,255,255,0.75)',
+                    color: active ? 'white' : 'rgba(255,255,255,0.65)',
                     borderBottom: active ? '2px solid' : '2px solid transparent',
-                    borderColor: active ? 'secondary.main' : 'transparent',
+                    borderColor: active ? 'white' : 'transparent',
                     borderRadius: 0,
                     px: 1.5,
                     py: 1,
                     fontSize: '0.8rem',
-                    '&:hover': { color: 'secondary.main', backgroundColor: 'transparent' },
+                    '&:hover': { color: 'white', backgroundColor: 'rgba(255,255,255,0.08)' },
                   }}
                 >
                   {link.label}
@@ -87,10 +87,16 @@ export default function Header() {
             <Button
               component={Link}
               href="/membership"
-              variant="contained"
-              color="secondary"
+              variant="outlined"
               size="small"
-              sx={{ display: { xs: 'none', lg: 'inline-flex' }, ml: 2, whiteSpace: 'nowrap' }}
+              sx={{
+                display: { xs: 'none', lg: 'inline-flex' },
+                ml: 2,
+                whiteSpace: 'nowrap',
+                color: 'white',
+                borderColor: 'rgba(255,255,255,0.6)',
+                '&:hover': { borderColor: 'white', backgroundColor: 'rgba(255,255,255,0.1)' },
+              }}
             >
               Join the Club
             </Button>
@@ -115,7 +121,7 @@ export default function Header() {
         slotProps={{ paper: { sx: { width: 280, backgroundColor: 'background.paper' } } }}
       >
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', p: 2 }}>
-          <Typography variant="h6" sx={{ color: 'secondary.main' }}>
+          <Typography variant="h6" sx={{ color: 'white' }}>
             OMC Racing
           </Typography>
           <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: 'white' }}>
@@ -134,7 +140,7 @@ export default function Header() {
                   onClick={() => setDrawerOpen(false)}
                   sx={{
                     borderLeft: active ? '3px solid' : '3px solid transparent',
-                    borderColor: active ? 'secondary.main' : 'transparent',
+                    borderColor: active ? 'white' : 'transparent',
                     pl: active ? 1.625 : 2,
                   }}
                 >
@@ -144,7 +150,7 @@ export default function Header() {
                       primary: {
                         sx: {
                           fontWeight: active ? 700 : 400,
-                          color: active ? 'secondary.main' : 'text.primary',
+                          color: active ? 'white' : 'text.primary',
                           fontFamily: '"Barlow Condensed", sans-serif',
                           fontSize: '1.1rem',
                           textTransform: 'uppercase',

@@ -36,7 +36,7 @@ export default function TrialsPage() {
     <>
       {/* Page header */}
       <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'secondary.main', position: 'relative', overflow: 'hidden',
-        '&::before': { content: '""', position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 20% 50%, rgba(253,220,1,0.08) 0%, transparent 60%)', pointerEvents: 'none' } }}>
+        '&::before': { content: '""', position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 20% 50%, rgba(0,25,135,0.3) 0%, transparent 60%)', pointerEvents: 'none' } }}>
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
             <NatureIcon sx={{ color: 'secondary.main', fontSize: 40 }} />
@@ -86,7 +86,7 @@ export default function TrialsPage() {
             </Grid>
 
             <Grid size={{ xs: 12, md: 5 }}>
-              <Card sx={{ border: '1px solid rgba(253,220,1,0.15)', mb: 3 }}>
+              <Card sx={{ border: '1px solid rgba(255,255,255,0.12)', mb: 3 }}>
                 <CardContent sx={{ p: 4 }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 3 }}>
                     <StarIcon sx={{ color: 'secondary.main' }} />

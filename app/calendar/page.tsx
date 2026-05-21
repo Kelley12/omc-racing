@@ -30,7 +30,7 @@ function EventCard({ event }: { event: CalendarEvent }) {
   const day = new Date(event.start).toLocaleDateString('en-US', { day: 'numeric', timeZone: event.allDay ? 'UTC' : undefined });
 
   return (
-    <Card sx={{ display: 'flex', border: '1px solid rgba(255,255,255,0.08)', transition: 'border-color 0.2s', '&:hover': { borderColor: 'rgba(253,220,1,0.3)' } }}>
+    <Card sx={{ display: 'flex', border: '1px solid rgba(255,255,255,0.08)', transition: 'border-color 0.2s', '&:hover': { borderColor: 'rgba(255,255,255,0.2)' } }}>
       {/* Date block */}
       <Box
         sx={{
@@ -39,8 +39,8 @@ function EventCard({ event }: { event: CalendarEvent }) {
           alignItems: 'center',
           justifyContent: 'center',
           minWidth: 72,
-          backgroundColor: 'rgba(253,220,1,0.1)',
-          borderRight: '1px solid rgba(253,220,1,0.15)',
+          backgroundColor: 'rgba(0,25,135,0.4)',
+          borderRight: '1px solid rgba(255,255,255,0.12)',
           px: 2,
           py: 2,
         }}
