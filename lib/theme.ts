@@ -6,13 +6,15 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#FF6600',
-      light: '#FF8533',
-      dark: '#CC5200',
+      main: '#001987',
+      light: '#2e44b0',
+      dark: '#001060',
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#ffffff',
+      main: '#fddc01',
+      light: '#fee94d',
+      dark: '#cab000',
       contrastText: '#121212',
     },
     background: {
@@ -71,10 +73,11 @@ const theme = createTheme({
           textTransform: 'uppercase',
           fontWeight: 700,
           letterSpacing: '0.08em',
+          whiteSpace: 'nowrap',
         },
         contained: {
           '&:hover': {
-            backgroundColor: '#CC5200',
+            backgroundColor: '#2e44b0',
           },
         },
       },
@@ -82,9 +85,9 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: '#0A0A0A',
+          backgroundColor: '#001987',
           backgroundImage: 'none',
-          borderBottom: '2px solid #FF6600',
+          borderBottom: '3px solid #fddc01',
         },
       },
     },

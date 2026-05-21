@@ -52,7 +52,7 @@ export default function Header() {
               }}
             >
               OMC
-              <Box component="span" sx={{ color: 'primary.main', ml: 0.5 }}>Racing</Box>
+              <Box component="span" sx={{ color: 'secondary.main', ml: 0.5 }}>Racing</Box>
             </Typography>
           </Box>
 
@@ -67,13 +67,14 @@ export default function Header() {
                   href={link.href}
                   size="small"
                   sx={{
-                    color: active ? 'primary.main' : 'text.secondary',
+                    color: active ? 'secondary.main' : 'rgba(255,255,255,0.75)',
                     borderBottom: active ? '2px solid' : '2px solid transparent',
+                    borderColor: active ? 'secondary.main' : 'transparent',
                     borderRadius: 0,
                     px: 1.5,
                     py: 1,
                     fontSize: '0.8rem',
-                    '&:hover': { color: 'white', backgroundColor: 'transparent' },
+                    '&:hover': { color: 'secondary.main', backgroundColor: 'transparent' },
                   }}
                 >
                   {link.label}
@@ -87,9 +88,9 @@ export default function Header() {
               component={Link}
               href="/membership"
               variant="contained"
-              color="primary"
+              color="secondary"
               size="small"
-              sx={{ display: { xs: 'none', lg: 'inline-flex' }, ml: 2 }}
+              sx={{ display: { xs: 'none', lg: 'inline-flex' }, ml: 2, whiteSpace: 'nowrap' }}
             >
               Join the Club
             </Button>
@@ -114,7 +115,7 @@ export default function Header() {
         slotProps={{ paper: { sx: { width: 280, backgroundColor: 'background.paper' } } }}
       >
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', p: 2 }}>
-          <Typography variant="h6" sx={{ color: 'primary.main' }}>
+          <Typography variant="h6" sx={{ color: 'secondary.main' }}>
             OMC Racing
           </Typography>
           <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: 'white' }}>
@@ -133,7 +134,7 @@ export default function Header() {
                   onClick={() => setDrawerOpen(false)}
                   sx={{
                     borderLeft: active ? '3px solid' : '3px solid transparent',
-                    borderColor: active ? 'primary.main' : 'transparent',
+                    borderColor: active ? 'secondary.main' : 'transparent',
                     pl: active ? 1.625 : 2,
                   }}
                 >
@@ -143,7 +144,7 @@ export default function Header() {
                       primary: {
                         sx: {
                           fontWeight: active ? 700 : 400,
-                          color: active ? 'primary.main' : 'text.primary',
+                          color: active ? 'secondary.main' : 'text.primary',
                           fontFamily: '"Barlow Condensed", sans-serif',
                           fontSize: '1.1rem',
                           textTransform: 'uppercase',

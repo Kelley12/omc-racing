@@ -37,11 +37,11 @@ export default function MembershipPage() {
   return (
     <>
       {/* Page header */}
-      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'primary.main' }}>
+      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'secondary.main' }}>
         <Container maxWidth="lg">
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
-            <GroupIcon sx={{ color: 'primary.main', fontSize: 40 }} />
-            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>Join the Club</Typography>
+            <GroupIcon sx={{ color: 'secondary.main', fontSize: 40 }} />
+            <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em' }}>Join the Club</Typography>
           </Box>
           <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '5rem' }, mb: 3 }}>Membership</Typography>
           <Typography color="text.secondary" sx={{ maxWidth: 620, fontSize: '1.1rem' }}>
@@ -56,7 +56,7 @@ export default function MembershipPage() {
 
           {/* Requirements */}
           <Box sx={{ mb: 8 }}>
-            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
+            <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
               How to Apply
             </Typography>
             <Typography variant="h2" sx={{ mb: 4, fontSize: { xs: '2rem', md: '3rem' } }}>
@@ -72,7 +72,7 @@ export default function MembershipPage() {
                 <Grid key={req.title} size={{ xs: 12, sm: 6 }}>
                   <Card sx={{ height: '100%', border: '1px solid rgba(255,255,255,0.08)' }}>
                     <CardContent sx={{ p: 3 }}>
-                      <Typography variant="h6" sx={{ mb: 1, fontFamily: '"Barlow Condensed", sans-serif', color: 'primary.main' }}>
+                      <Typography variant="h6" sx={{ mb: 1, fontFamily: '"Barlow Condensed", sans-serif', color: 'secondary.main' }}>
                         {req.title}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">{req.body}</Typography>
@@ -85,7 +85,7 @@ export default function MembershipPage() {
 
           {/* Pricing table */}
           <Box sx={{ mb: 8 }}>
-            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
+            <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
               2026 Season
             </Typography>
             <Typography variant="h2" sx={{ mb: 4, fontSize: { xs: '2rem', md: '3rem' } }}>
@@ -109,8 +109,8 @@ export default function MembershipPage() {
                     <TableHead>
                       <TableRow>
                         <TableCell sx={{ color: 'text.secondary', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.7rem', letterSpacing: '0.08em' }}>Category</TableCell>
-                        <TableCell align="right" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.7rem', letterSpacing: '0.08em' }}>MX</TableCell>
-                        <TableCell align="right" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.7rem', letterSpacing: '0.08em' }}>Trials</TableCell>
+                        <TableCell align="right" sx={{ color: 'secondary.main', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.7rem', letterSpacing: '0.08em' }}>MX</TableCell>
+                        <TableCell align="right" sx={{ color: 'secondary.main', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.7rem', letterSpacing: '0.08em' }}>Trials</TableCell>
                         <TableCell align="right" sx={{ color: 'text.secondary', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.7rem', letterSpacing: '0.08em' }}>Hours</TableCell>
                       </TableRow>
                     </TableHead>
@@ -143,8 +143,8 @@ export default function MembershipPage() {
                     <TableHead>
                       <TableRow>
                         <TableCell sx={{ color: 'text.secondary', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.7rem', letterSpacing: '0.08em' }}>Category</TableCell>
-                        <TableCell align="right" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.7rem', letterSpacing: '0.08em' }}>MX</TableCell>
-                        <TableCell align="right" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.7rem', letterSpacing: '0.08em' }}>Trials</TableCell>
+                        <TableCell align="right" sx={{ color: 'secondary.main', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.7rem', letterSpacing: '0.08em' }}>MX</TableCell>
+                        <TableCell align="right" sx={{ color: 'secondary.main', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.7rem', letterSpacing: '0.08em' }}>Trials</TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
@@ -171,11 +171,11 @@ export default function MembershipPage() {
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3 }}>
                 <Box>
                   <Typography variant="body2" color="text.secondary">Electronic Gate Card</Typography>
-                  <Typography variant="h5" sx={{ fontFamily: '"Barlow Condensed", sans-serif', color: 'primary.main' }}>$25</Typography>
+                  <Typography variant="h5" sx={{ fontFamily: '"Barlow Condensed", sans-serif', color: 'secondary.main' }}>$25</Typography>
                 </Box>
                 <Box>
                   <Typography variant="body2" color="text.secondary">Reinstatement Fee</Typography>
-                  <Typography variant="h5" sx={{ fontFamily: '"Barlow Condensed", sans-serif', color: 'primary.main' }}>$100</Typography>
+                  <Typography variant="h5" sx={{ fontFamily: '"Barlow Condensed", sans-serif', color: 'secondary.main' }}>$100</Typography>
                 </Box>
               </Box>
             </Box>
@@ -188,7 +188,7 @@ export default function MembershipPage() {
               {memberBenefits.map((benefit) => (
                 <Grid key={benefit} size={{ xs: 12, sm: 6, md: 4 }}>
                   <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
-                    <CheckCircleIcon sx={{ color: 'primary.main', fontSize: 20, mt: 0.25, flexShrink: 0 }} />
+                    <CheckCircleIcon sx={{ color: 'secondary.main', fontSize: 20, mt: 0.25, flexShrink: 0 }} />
                     <Typography variant="body2" color="text.secondary">{benefit}</Typography>
                   </Box>
                 </Grid>
@@ -197,7 +197,7 @@ export default function MembershipPage() {
           </Box>
 
           {/* Download CTA */}
-          <Card sx={{ border: '1px solid rgba(255,102,0,0.3)', backgroundColor: 'rgba(255,102,0,0.05)' }}>
+          <Card sx={{ border: '1px solid rgba(253,220,1,0.2)', backgroundColor: 'rgba(253,220,1,0.05)' }}>
             <CardContent sx={{ p: 4 }}>
               <Typography variant="h4" sx={{ mb: 2, fontSize: '1.75rem', fontFamily: '"Barlow Condensed", sans-serif' }}>
                 Ready to Apply?

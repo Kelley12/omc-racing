@@ -24,11 +24,11 @@ export default function HistoryPage() {
   return (
     <>
       {/* Page header */}
-      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'primary.main' }}>
+      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'secondary.main' }}>
         <Container maxWidth="lg">
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
-            <HistoryIcon sx={{ color: 'primary.main', fontSize: 40 }} />
-            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>Est. 1940</Typography>
+            <HistoryIcon sx={{ color: 'secondary.main', fontSize: 40 }} />
+            <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em' }}>Est. 1940</Typography>
           </Box>
           <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '5rem' }, mb: 3 }}>Our History</Typography>
           <Typography color="text.secondary" sx={{ maxWidth: 620, fontSize: '1.1rem' }}>
@@ -61,7 +61,7 @@ export default function HistoryPage() {
           <Typography variant="h2" sx={{ mb: 6, fontSize: { xs: '2rem', md: '2.75rem' } }}>Timeline</Typography>
           <Box sx={{ position: 'relative' }}>
             {/* Vertical line */}
-            <Box sx={{ position: 'absolute', left: { xs: 20, md: 120 }, top: 0, bottom: 0, width: 2, backgroundColor: 'rgba(255,102,0,0.2)' }} />
+            <Box sx={{ position: 'absolute', left: { xs: 20, md: 120 }, top: 0, bottom: 0, width: 2, backgroundColor: 'rgba(253,220,1,0.15)' }} />
 
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
               {timeline.map((event) => (
@@ -73,7 +73,7 @@ export default function HistoryPage() {
                   <Box sx={{ flexShrink: 0, width: { xs: 40, md: 120 }, textAlign: { xs: 'left', md: 'right' } }}>
                     <Typography
                       variant="h6"
-                      sx={{ fontFamily: '"Barlow Condensed", sans-serif', color: 'primary.main', fontSize: { xs: '0.9rem', md: '1rem' }, lineHeight: 1.2 }}
+                      sx={{ fontFamily: '"Barlow Condensed", sans-serif', color: 'secondary.main', fontSize: { xs: '0.9rem', md: '1rem' }, lineHeight: 1.2 }}
                     >
                       {event.year}
                     </Typography>
@@ -81,7 +81,7 @@ export default function HistoryPage() {
 
                   {/* Dot */}
                   <Box sx={{ position: 'relative', flexShrink: 0 }}>
-                    <Box sx={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: 'primary.main', mt: 0.5, boxShadow: '0 0 0 3px rgba(255,102,0,0.2)' }} />
+                    <Box sx={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: 'secondary.main', mt: 0.5, boxShadow: '0 0 0 3px rgba(253,220,1,0.15)' }} />
                   </Box>
 
                   {/* Content */}
@@ -101,9 +101,9 @@ export default function HistoryPage() {
             sx={{
               mt: 10,
               p: { xs: 3, md: 5 },
-              border: '1px solid rgba(255,102,0,0.3)',
+              border: '1px solid rgba(253,220,1,0.2)',
               borderRadius: 1,
-              background: 'linear-gradient(135deg, rgba(255,102,0,0.05) 0%, transparent 100%)',
+              background: 'linear-gradient(135deg, rgba(253,220,1,0.05) 0%, transparent 100%)',
             }}
           >
             <Typography variant="h3" sx={{ mb: 2, fontSize: { xs: '1.5rem', md: '2rem' } }}>

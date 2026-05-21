@@ -20,11 +20,11 @@ export default function NewsPage() {
 
   return (
     <>
-      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'primary.main' }}>
+      <Box sx={{ py: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)', borderBottom: '2px solid', borderColor: 'secondary.main' }}>
         <Container maxWidth="lg">
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
-            <ArticleIcon sx={{ color: 'primary.main', fontSize: 40 }} />
-            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>Updates</Typography>
+            <ArticleIcon sx={{ color: 'secondary.main', fontSize: 40 }} />
+            <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em' }}>Updates</Typography>
           </Box>
           <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '5rem' }, mb: 3 }}>Club News</Typography>
           <Typography color="text.secondary" sx={{ maxWidth: 620, fontSize: '1.1rem' }}>
@@ -48,12 +48,12 @@ export default function NewsPage() {
                       flexDirection: 'column',
                       border: '1px solid rgba(255,255,255,0.08)',
                       transition: 'border-color 0.2s',
-                      '&:hover': { borderColor: 'rgba(255,102,0,0.4)' },
+                      '&:hover': { borderColor: 'rgba(253,220,1,0.3)' },
                     }}
                   >
                     <CardActionArea component={Link} href={`/news/${post.slug}`} sx={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                       <CardContent sx={{ p: 3, flex: 1 }}>
-                        <Typography variant="caption" sx={{ color: 'primary.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                        <Typography variant="caption" sx={{ color: 'secondary.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                           {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
                         </Typography>
                         {post.author && (
