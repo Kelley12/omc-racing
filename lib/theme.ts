@@ -85,7 +85,7 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: '#001987',    // dark blue header
+          backgroundColor: '#1A1A1A',    // dark grey header
           backgroundImage: 'none',
           borderBottom: '2px solid #4d8ef7',  // light blue accent rule
         },
