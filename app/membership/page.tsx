@@ -196,6 +196,32 @@ export default function MembershipPage() {
             </Grid>
           </Box>
 
+          {/* Track & riding etiquette */}
+          <Box sx={{ mb: 8 }}>
+            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
+              Before You Ride
+            </Typography>
+            <Typography variant="h2" sx={{ mb: 2, fontSize: { xs: '2rem', md: '3rem' } }}>
+              Track &amp; Riding Etiquette
+            </Typography>
+            <Typography color="text.secondary" sx={{ mb: 4, maxWidth: 640, lineHeight: 1.8 }}>
+              All members and guests are expected to follow proper track etiquette. Knowing the rules
+              keeps everyone safe and ensures the best experience for all riders.
+            </Typography>
+            <Box sx={{ maxWidth: 800 }}>
+              <Box sx={{ position: 'relative', paddingTop: '56.25%', borderRadius: 1, overflow: 'hidden', backgroundColor: '#000' }}>
+                <Box
+                  component="iframe"
+                  src="https://www.youtube.com/embed/vylDJJSrFDA"
+                  title="Top 5 Motocross Track Riding Etiquette Tips"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+                />
+              </Box>
+            </Box>
+          </Box>
+
           {/* Download CTA */}
           <Card sx={{ border: '1px solid rgba(255,255,255,0.15)', backgroundColor: 'rgba(77,142,247,0.1)' }}>
             <CardContent sx={{ p: 4 }}>
