@@ -8,6 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import Divider from '@mui/material/Divider';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import EmailIcon from '@mui/icons-material/Email';
+import DownloadIcon from '@mui/icons-material/Download';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -207,15 +208,27 @@ export default function SponsorsPage() {
                 operations, and keeps this historic facility accessible to the Idaho motorsports community.
                 Contact our Public Relations/Advertising Coordinator to learn more.
               </Typography>
-              <Button
-                component="a"
-                href="mailto:brighteye208@gmail.com?subject=OMC Sponsorship Inquiry"
-                variant="contained"
-                color="primary"
-                startIcon={<EmailIcon />}
-              >
-                Contact About Sponsorship
-              </Button>
+              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                <Button
+                  component="a"
+                  href="mailto:brighteye208@gmail.com?subject=OMC Sponsorship Inquiry"
+                  variant="contained"
+                  color="primary"
+                  startIcon={<EmailIcon />}
+                >
+                  Contact About Sponsorship
+                </Button>
+                <Button
+                  component="a"
+                  href="/files/OMC-Advertising-Letter-2025.pdf"
+                  download
+                  variant="outlined"
+                  color="secondary"
+                  startIcon={<DownloadIcon />}
+                >
+                  Download Advertising Letter
+                </Button>
+              </Box>
             </CardContent>
           </Card>
 
