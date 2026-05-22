@@ -8,20 +8,22 @@ terraform {
     }
   }
 
-  # Remote state — update bucket name after initial AWS account setup
-  # backend "s3" {
-  #   bucket = "omcracing-tf-state"
-  #   key    = "website/terraform.tfstate"
-  #   region = "us-east-1"
-  # }
+  backend "s3" {
+    bucket  = "omcracing-tf-state"
+    key     = "website/terraform.tfstate"
+    region  = "us-west-2"
+    profile = "omc-racing"
+  }
 }
 
 provider "aws" {
-  region = var.aws_region
+  region  = var.aws_region
+  profile = "omc-racing"
 }
 
 # ACM certs for CloudFront must be in us-east-1 regardless of primary region
 provider "aws" {
-  alias  = "us_east_1"
-  region = "us-east-1"
+  alias   = "us_east_1"
+  region  = "us-east-1"
+  profile = "omc-racing"
 }

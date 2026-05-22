@@ -99,13 +99,36 @@ resource "aws_lambda_permission" "apigw" {
 
 # Custom domain for the API (api.omcracing.com)
 resource "aws_acm_certificate" "api" {
-  provider          = aws.us_east_1
+  # API Gateway regional endpoints require the cert in the same region (us-west-2)
+  # Only CloudFront requires us-east-1
   domain_name       = "api.${var.domain_name}"
   validation_method = "DNS"
   lifecycle { create_before_destroy = true }
 }
 
+resource "aws_route53_record" "api_cert_validation" {
+  for_each = {
+    for dvo in aws_acm_certificate.api.domain_validation_options : dvo.domain_name => {
+      name   = dvo.resource_record_name
+      record = dvo.resource_record_value
+      type   = dvo.resource_record_type
+    }
+  }
+  allow_overwrite = true
+  name            = each.value.name
+  records         = [each.value.record]
+  ttl             = 60
+  type            = each.value.type
+  zone_id         = aws_route53_zone.primary.zone_id
+}
+
+resource "aws_acm_certificate_validation" "api" {
+  certificate_arn         = aws_acm_certificate.api.arn
+  validation_record_fqdns = [for record in aws_route53_record.api_cert_validation : record.fqdn]
+}
+
 resource "aws_apigatewayv2_domain_name" "oauth" {
+  depends_on  = [aws_acm_certificate_validation.api]
   domain_name = "api.${var.domain_name}"
 
   domain_name_configuration {
