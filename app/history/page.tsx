@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'History',
-  description: 'The history of the Owyhee Motorcycle Club since 1940, one of Idaho\'s oldest motorsports clubs.',
+  description: 'The history of the Owyhee Motorcycle Club since 1940 — one of Idaho\'s oldest motorsports clubs.',
 };
 
 const timeline = [
@@ -51,7 +51,7 @@ export default function HistoryPage() {
               grown into one of the most respected motorsports facilities in Idaho.
             </Typography>
             <Typography color="text.secondary" sx={{ lineHeight: 1.8 }}>
-              Throughout its history, OMC has remained entirely member-supported. No corporate
+              Throughout its history, OMC has remained entirely member-supported — no corporate
               ownership, no outside funding. The facility exists because members show up to work
               parties, pay their dues, and take pride in what they&apos;ve built together.
             </Typography>

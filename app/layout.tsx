@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: '%s | OMC Racing',
   },
   description:
-    'Owyhee Motorcycle Club, AMA-chartered motocross and trials club established in 1940. Located in Southwest Idaho near Boise.',
+    'Owyhee Motorcycle Club — AMA-chartered motocross and trials club established in 1940. Located in Southwest Idaho near Boise.',
   keywords: ['motocross', 'trials', 'motorcycle club', 'Boise Idaho', 'OMC', 'Owyhee'],
   openGraph: {
     siteName: 'OMC Racing',

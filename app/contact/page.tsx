@@ -15,7 +15,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Contact the Owyhee Motorcycle Club for location, email, social media, and facility hours.',
+  description: 'Contact the Owyhee Motorcycle Club — location, email, social media, and facility hours.',
 };
 
 export default function ContactPage() {
@@ -95,7 +95,7 @@ export default function ContactPage() {
                       <AccessTimeIcon sx={{ color: 'primary.main' }} />
                       <Typography variant="h6" sx={{ fontFamily: '"Barlow Condensed", sans-serif' }}>Facility Hours</Typography>
                     </Box>
-                    <Typography color="text.secondary">7:00 AM to 10:00 PM daily</Typography>
+                    <Typography color="text.secondary">7:00 AM - 10:00 PM daily</Typography>
                     <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
                       Members only during non-event hours. Membership card required for gate access.
                     </Typography>
