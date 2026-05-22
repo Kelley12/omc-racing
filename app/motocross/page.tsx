@@ -153,7 +153,7 @@ export default function MotocrossPage() {
                     {[
                       { time: '6:30 AM', desc: 'Gates & office open' },
                       { time: '8:00 AM', desc: 'Practice begins' },
-                      { time: 'After practice', desc: 'Racing follows' },
+                      { time: 'After practice', desc: 'Racing begins' },
                     ].map(({ time, desc }) => (
                       <Box key={time} sx={{ display: 'flex', gap: 2, alignItems: 'baseline' }}>
                         <Typography sx={{ color: 'primary.main', fontWeight: 700, fontFamily: '"Barlow Condensed", sans-serif', fontSize: '1.1rem', minWidth: 130, flexShrink: 0 }}>
