@@ -39,7 +39,7 @@ jobs:
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-to-assume: arn:aws:iam::280553257669:role/omcracing-github-deploy
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Sync static files to S3
