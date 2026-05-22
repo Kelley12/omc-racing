@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy policy for omcracing.com — how we collect, use, and protect your information.',
+  description: 'Privacy policy for omcracing.com: how we collect, use, and protect your information.',
 };
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (

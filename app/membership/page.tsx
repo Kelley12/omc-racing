@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 const memberBenefits = [
-  'Year-round track access 7am – 9pm daily (except race days and day prior)',
+  'Year-round track access 7am to 9pm daily (except race days and day prior)',
   'Members-only Watered Wednesday practices (Memorial Day through Labor Day)',
   'Voting rights at monthly club meetings',
   'Participation in all club social functions',
@@ -64,7 +64,7 @@ export default function MembershipPage() {
             </Typography>
             <Grid container spacing={3}>
               {[
-                { title: 'Waiver', body: 'An annual waiver must be completed on the official form — no copies or prints allowed. Must be witnessed (or notarized if completing remotely). Available at meetings, events, or by contacting a board member.' },
+                { title: 'Waiver', body: 'An annual waiver must be completed on the official form. No copies or prints allowed. Must be witnessed (or notarized if completing remotely). Available at meetings, events, or by contacting a board member.' },
                 { title: 'Meeting Attendance', body: 'Attend monthly club meetings held the first Thursday of each month at 7:00 PM. To be voted in, attend 2 meetings and work half your required hours, or attend 3 meetings.' },
                 { title: 'Good Standing', body: 'Members must be in good standing and of good moral character as determined by the club board.' },
                 { title: 'Volunteer Hours', body: 'Working members must complete the required number of volunteer hours (half due by June 1, remaining by season end). Non-working memberships waive hours in exchange for higher dues.' },
@@ -100,12 +100,12 @@ export default function MembershipPage() {
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
                       {[
-                        'A member MUST work 1 event during the year — these hours count toward your required total.',
+                        'A member MUST work 1 event during the year, and these hours count toward your required total.',
                         'You are responsible for tracking your own hours. Work vouchers are provided by OMC and must be legible, signed, and dated by a board member. Keep the yellow copy for your records.',
                         'Vouchers that are not signed and legible will not be counted.',
                         'Members who have not completed half their work hours by June 1st will have their gate card deactivated.',
                         'All hours must be completed by the end of December.',
-                        'The day before each public event is a work day for prep — flaggers are required at each event. Hours can also be earned via grounds clean-up: trash pick-up, weeds, emptying cans, starting gate, fence repair, and more. Contact the Groundskeeper or any board member for details.',
+                        'The day before each public event is a work day for prep. Flaggers are required at each event. Hours can also be earned via grounds clean-up: trash pick-up, weeds, emptying cans, starting gate, fence repair, and more. Contact the Groundskeeper or any board member for details.',
                       ].map((item, i) => (
                         <Box key={i} sx={{ display: 'flex', gap: 1.5, alignItems: 'flex-start' }}>
                           <Box sx={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: 'primary.main', mt: '6px', flexShrink: 0 }} />
@@ -126,7 +126,7 @@ export default function MembershipPage() {
                         Club Access
                       </Typography>
                       <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5, lineHeight: 1.7 }}>
-                        Access is prohibited to anyone who is not a current member in good standing —
+                        Access is prohibited to anyone who is not a current member in good standing,
                         this includes proper paperwork and volunteer requirements.
                       </Typography>
                       <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>
@@ -195,7 +195,7 @@ export default function MembershipPage() {
                     <TableBody>
                       {[
                         { cat: 'Working Household', mx: '$375', trials: '$200', hours: '20' },
-                        { cat: 'Additional Youth (11–21)', mx: '$100', trials: '$25', hours: '5' },
+                        { cat: 'Additional Youth (11-21)', mx: '$100', trials: '$25', hours: '5' },
                         { cat: 'Additional Adult (22+)', mx: '$200', trials: '$200', hours: '10' },
                       ].map((row) => (
                         <TableRow key={row.cat} sx={{ '&:last-child td': { border: 0 } }}>
@@ -228,7 +228,7 @@ export default function MembershipPage() {
                     <TableBody>
                       {[
                         { cat: 'Non-Working Household', mx: '$1,400', trials: '$1,000' },
-                        { cat: 'Additional Youth (11–21)', mx: '$350', trials: '$100' },
+                        { cat: 'Additional Youth (11-21)', mx: '$350', trials: '$100' },
                         { cat: 'Additional Adult (22+)', mx: '$700', trials: '$500' },
                       ].map((row) => (
                         <TableRow key={row.cat} sx={{ '&:last-child td': { border: 0 } }}>

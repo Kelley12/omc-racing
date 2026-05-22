@@ -8,14 +8,14 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'History',
-  description: 'The history of the Owyhee Motorcycle Club since 1940 — one of Idaho\'s oldest motorsports clubs.',
+  description: 'The history of the Owyhee Motorcycle Club since 1940, one of Idaho\'s oldest motorsports clubs.',
 };
 
 const timeline = [
   { year: '1940', title: 'Club Founded', body: 'The Owyhee Motorcycle Club is established in Boise, Idaho, bringing together motorcycle enthusiasts from across Southwest Idaho.' },
-  { year: '1940s–60s', title: 'Early Growth', body: 'The club grows through the post-war era, establishing its facility in the Owyhee foothills and hosting some of the first organized motorcycle competitions in the region.' },
-  { year: '1970s–80s', title: 'Motocross Era', body: 'As motocross sweeps the country, OMC builds out its full-sized motocross track and begins hosting AMA-sanctioned events, drawing riders from across the Pacific Northwest.' },
-  { year: '1990s–2000s', title: 'Trials Program', body: 'A dedicated trials riding area is added to the facility, attracting a new generation of technical riders and hosting regional trials competitions.' },
+  { year: '1940s-60s', title: 'Early Growth', body: 'The club grows through the post-war era, establishing its facility in the Owyhee foothills and hosting some of the first organized motorcycle competitions in the region.' },
+  { year: '1970s-80s', title: 'Motocross Era', body: 'As motocross sweeps the country, OMC builds out its full-sized motocross track and begins hosting AMA-sanctioned events, drawing riders from across the Pacific Northwest.' },
+  { year: '1990s-2000s', title: 'Trials Program', body: 'A dedicated trials riding area is added to the facility, attracting a new generation of technical riders and hosting regional trials competitions.' },
   { year: '2022', title: 'National Historic Designation', body: 'The OMC facility is added to the National Register of Historic Places in partnership with Preservation Idaho, recognizing over 80 years of continuous motorsports heritage.' },
   { year: 'Today', title: 'Still Going Strong', body: 'OMC continues to operate as a member-supported club, hosting motocross and trials events open to the public while maintaining year-round access for its members.' },
 ];
@@ -51,7 +51,7 @@ export default function HistoryPage() {
               grown into one of the most respected motorsports facilities in Idaho.
             </Typography>
             <Typography color="text.secondary" sx={{ lineHeight: 1.8 }}>
-              Throughout its history, OMC has remained entirely member-supported — no corporate
+              Throughout its history, OMC has remained entirely member-supported. No corporate
               ownership, no outside funding. The facility exists because members show up to work
               parties, pay their dues, and take pride in what they&apos;ve built together.
             </Typography>

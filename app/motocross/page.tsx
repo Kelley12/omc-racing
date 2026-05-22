@@ -19,7 +19,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Motocross',
-  description: 'OMC Racing motocross — summer and winter tracks for year-round riding in Southwest Idaho. Open to members and non-members on race days.',
+  description: 'OMC Racing motocross with summer and winter tracks for year-round riding in Southwest Idaho. Open to members and non-members on race days.',
 };
 
 export default function MotocrossPage() {
@@ -201,7 +201,7 @@ export default function MotocrossPage() {
                     <Typography variant="h5" sx={{ fontFamily: '"Barlow Condensed", sans-serif' }}>Admission</Typography>
                   </Box>
                   <Typography color="text.secondary" sx={{ mb: 1.5, lineHeight: 1.8 }}>
-                    Come and see the races — or better yet, come and join in the fun! Racing at OMC is open
+                    Come and see the races, or better yet, come and join in the fun! Racing at OMC is open
                     to everyone. Club rules and regulations must be followed and all required waivers
                     collected prior to access.
                   </Typography>
@@ -217,7 +217,7 @@ export default function MotocrossPage() {
                     Paid Public Practice
                   </Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5, lineHeight: 1.7 }}>
-                    Non-members are welcome on paid public practice days. Times vary — check the website,
+                    Non-members are welcome on paid public practice days. Times vary, so check the website,
                     Instagram, or Facebook for current schedules.
                   </Typography>
                   <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>

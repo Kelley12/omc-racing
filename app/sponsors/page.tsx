@@ -192,7 +192,7 @@ export default function SponsorsPage() {
               Kurt Caselli Foundation
             </Typography>
             <Typography color="text.secondary" sx={{ lineHeight: 1.8 }}>
-              Thank you to the Kurt Caselli Foundation for your continued support — we appreciate the flags,
+              Thank you to the Kurt Caselli Foundation for your continued support. We appreciate the flags,
               flagger vests, and sweeper bags!
             </Typography>
           </Box>

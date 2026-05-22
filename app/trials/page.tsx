@@ -13,7 +13,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Trials',
-  description: 'OMC trials riding area — natural rocky terrain with challenging obstacles, endorsed by 6x National Champion Ryan Young and pro rider Taylor Robert.',
+  description: 'OMC trials riding area with natural rocky terrain and challenging obstacles, endorsed by 6x National Champion Ryan Young and pro rider Taylor Robert.',
 };
 
 // Sponsor data — logos are self-hosted to survive the WordPress migration
@@ -35,7 +35,7 @@ const additionalSponsors = [
 const areaFeatures = [
   'Natural rocky terrain with challenging obstacles',
   'Located just left of the gate, below the arenacross track',
-  'Suitable for all skill levels — beginner to expert',
+  'Suitable for all skill levels, from beginner to expert',
   'Practice area open year-round for members',
   'Club-organized trials events',
 ];
@@ -69,7 +69,7 @@ export default function TrialsPage() {
           <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '5rem' }, mb: 3 }}>Trials</Typography>
           <Typography color="text.secondary" sx={{ maxWidth: 680, mb: 4, fontSize: '1.1rem', lineHeight: 1.7 }}>
             OMC is pleased to announce a trials riding practice area! Located just left of the gate,
-            below the arenacross track — offering challenging obstacles and features for skill development
+            below the arenacross track, with challenging obstacles and features for skill development
             in trials riding.
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>

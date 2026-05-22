@@ -52,7 +52,7 @@ export default function Footer() {
               OMC<Box component="span" sx={{ color: 'primary.main' }}> Racing</Box>
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 2, maxWidth: 300 }}>
-              Owyhee Motorcycle Club — Est. 1940. AMA-chartered, member-supported motorsports club
+              Owyhee Motorcycle Club, Est. 1940. AMA-chartered, member-supported motorsports club
               in Southwest Idaho.
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
