@@ -2,6 +2,31 @@ locals {
   s3_origin_id = "omcracing-s3-origin"
 }
 
+# CloudFront Function — rewrites directory requests to /path/index.html
+# Needed because S3 doesn't serve index.html for subdirectory paths like /calendar
+resource "aws_cloudfront_function" "rewrite_index" {
+  name    = "omcracing-rewrite-index"
+  runtime = "cloudfront-js-2.0"
+  publish = true
+  code    = <<-EOF
+    function handler(event) {
+      var request = event.request;
+      var uri = request.uri;
+
+      // Append /index.html to trailing-slash URIs
+      if (uri.endsWith('/')) {
+        request.uri += 'index.html';
+      }
+      // Append /index.html to URIs with no file extension (e.g. /calendar, /sponsors)
+      else if (!uri.includes('.', uri.lastIndexOf('/'))) {
+        request.uri += '/index.html';
+      }
+
+      return request;
+    }
+  EOF
+}
+
 resource "aws_cloudfront_distribution" "website" {
   enabled             = true
   is_ipv6_enabled     = true
@@ -33,14 +58,18 @@ resource "aws_cloudfront_distribution" "website" {
     min_ttl     = 0
     default_ttl = 3600
     max_ttl     = 86400
+
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.rewrite_index.arn
+    }
   }
 
-  # Handle Next.js static export trailing-slash routing
-  # Returns index.html for directory paths
+  # 403 from S3 (missing object) → 404 page
   custom_error_response {
     error_code            = 403
-    response_code         = 200
-    response_page_path    = "/index.html"
+    response_code         = 404
+    response_page_path    = "/404.html"
     error_caching_min_ttl = 10
   }
 
