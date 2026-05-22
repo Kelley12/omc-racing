@@ -11,8 +11,6 @@ permissions:
 
 env:
   AWS_REGION: us-west-2
-  S3_BUCKET: omcracing-website
-  CLOUDFRONT_ID: E24NQLK5Z13X8I
 
 jobs:
   deploy:
@@ -41,27 +39,27 @@ jobs:
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::280553257669:role/omcracing-github-deploy
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Sync static files to S3
         run: |
-          aws s3 sync out/ s3://${{ env.S3_BUCKET }} \
+          aws s3 sync out/ s3://${{ secrets.S3_BUCKET_NAME }} \
             --delete \
             --cache-control "public, max-age=3600" \
             --exclude "*.html" \
             --exclude "admin/*"
           # HTML files get a shorter TTL so content updates propagate quickly
-          aws s3 sync out/ s3://${{ env.S3_BUCKET }} \
+          aws s3 sync out/ s3://${{ secrets.S3_BUCKET_NAME }} \
             --delete \
             --cache-control "public, max-age=0, must-revalidate" \
             --include "*.html"
           # Admin files must not be cached (always latest CMS)
-          aws s3 sync out/admin/ s3://${{ env.S3_BUCKET }}/admin/ \
+          aws s3 sync out/admin/ s3://${{ secrets.S3_BUCKET_NAME }}/admin/ \
             --cache-control "no-store"
 
       - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id ${{ env.CLOUDFRONT_ID }} \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
             --paths "/*"
