@@ -135,9 +135,19 @@ export default function Footer() {
           <Typography variant="caption" color="text.secondary">
             © {new Date().getFullYear()} Owyhee Motorcycle Club. All rights reserved.
           </Typography>
-          <Typography variant="caption" color="text.secondary">
-            AMA-Chartered Club · National Register of Historic Places
-          </Typography>
+          <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+            <Typography variant="caption" color="text.secondary">
+              AMA-Chartered Club · National Register of Historic Places
+            </Typography>
+            <Link
+              component={NextLink}
+              href="/privacy"
+              underline="none"
+              sx={{ color: 'text.secondary', fontSize: '0.75rem', '&:hover': { color: 'primary.main' } }}
+            >
+              Privacy Policy
+            </Link>
+          </Box>
         </Box>
       </Container>
     </Box>

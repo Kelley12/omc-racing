@@ -7,6 +7,8 @@ import './globals.css';
 import ThemeRegistry from '@/components/ThemeRegistry';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+import CookieConsent from '@/components/CookieConsent';
 import Box from '@mui/material/Box';
 
 export const metadata: Metadata = {
@@ -28,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <ThemeRegistry>
+          <GoogleAnalytics />
           <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
             <Header />
             <Box component="main" sx={{ flex: 1 }}>
@@ -35,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Box>
             <Footer />
           </Box>
+          <CookieConsent />
         </ThemeRegistry>
       </body>
     </html>
