@@ -15,12 +15,11 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import TrackStatusBanner from '@/components/TrackStatusBanner';
 import { getTrackStatus, getAllNewsPosts } from '@/lib/content';
 
-// Title sponsors — shown large on the homepage
+// Diamond and Gold sponsors — shown on the homepage
 const titleSponsors = [
-  { name: "Carl's Cycle", url: 'https://carlscycle.com', logo: '/images/sponsors/carls-sponsor-logo.jpeg' },
-  { name: 'Fly Racing', url: 'https://flyracing.com', logo: '/images/sponsors/fly-racing-logo.png' },
-  { name: 'FirePower Parts', url: 'https://firepowerparts.com', logo: '/images/sponsors/FirePower-ComboMark-Color.png' },
-  { name: 'Shinko Tire USA', url: 'https://shinkotireusa.com', logo: '/images/sponsors/ShinkoLogo_Fullcolor_Black_2019-01.png' },
+  { name: 'Yamaha Outdoor Access Initiative / Dillon Powersports', url: 'https://www.dennisdillonpowersports.com/', logo: '/images/sponsors/yoai-dillon-powersports.png' },
+  { name: "Carl's Cycle Sales", url: 'https://carlscycle.com', logo: '/images/sponsors/carls-sponsor-logo.jpeg' },
+  { name: 'Dave Evans Construction', url: 'https://devansconstruction.com', logo: '/images/sponsors/dec_logo.jpeg' },
 ];
 
 
