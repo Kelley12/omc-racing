@@ -76,9 +76,6 @@ export default function SponsorsPage() {
 
           {/* Diamond Sponsors */}
           <Box sx={{ mb: 8 }}>
-            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
-              Diamond
-            </Typography>
             <Typography variant="h2" sx={{ mb: 5, fontSize: { xs: '2rem', md: '3rem' } }}>
               Diamond Sponsors
             </Typography>
@@ -109,9 +106,6 @@ export default function SponsorsPage() {
 
           {/* Gold Sponsors */}
           <Box sx={{ mb: 8 }}>
-            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
-              Gold
-            </Typography>
             <Typography variant="h2" sx={{ mb: 5, fontSize: { xs: '2rem', md: '3rem' } }}>
               Gold Sponsors
             </Typography>
@@ -142,9 +136,6 @@ export default function SponsorsPage() {
 
           {/* Bronze Sponsors */}
           <Box sx={{ mb: 8 }}>
-            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
-              Bronze
-            </Typography>
             <Typography variant="h2" sx={{ mb: 5, fontSize: { xs: '2rem', md: '3rem' } }}>
               Bronze Sponsors
             </Typography>
@@ -175,9 +166,6 @@ export default function SponsorsPage() {
 
           {/* Special Sponsor */}
           <Box sx={{ mb: 8 }}>
-            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em', display: 'block', mb: 1 }}>
-              Special Sponsor
-            </Typography>
             <Typography variant="h2" sx={{ mb: 5, fontSize: { xs: '2rem', md: '3rem' } }}>
               Special Partner
             </Typography>
