@@ -115,7 +115,7 @@ export default function SponsorsPage() {
             <Typography variant="h2" sx={{ mb: 5, fontSize: { xs: '2rem', md: '3rem' } }}>
               Gold Sponsors
             </Typography>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} sx={{ justifyContent: 'center' }}>
               {goldSponsors.map((sponsor) => (
                 <Grid key={sponsor.name} size={{ xs: 12, sm: 6, md: 4 }}>
                   <Box
@@ -148,7 +148,7 @@ export default function SponsorsPage() {
             <Typography variant="h2" sx={{ mb: 5, fontSize: { xs: '2rem', md: '3rem' } }}>
               Bronze Sponsors
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{ justifyContent: 'center' }}>
               {bronzeSponsors.map((sponsor) => (
                 <Grid key={sponsor.name} size={{ xs: 6, sm: 4, md: 3 }}>
                   <Box
@@ -181,7 +181,7 @@ export default function SponsorsPage() {
             <Typography variant="h2" sx={{ mb: 5, fontSize: { xs: '2rem', md: '3rem' } }}>
               Special Partner
             </Typography>
-            <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap' }}>
+            <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap', justifyContent: 'center' }}>
               {specialSponsors.map((sponsor) => (
                 <Box
                   key={sponsor.name}
