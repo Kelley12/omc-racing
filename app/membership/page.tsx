@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const memberBenefits = [
   'Year-round track access 7am to 9pm daily (except race days and day prior)',
   'Members-only Watered Wednesday practices (Memorial Day through Labor Day)',
-  'Voting rights at monthly club meetings',
+  'Voting rights at monthly club meetings (working members only)',
   'Participation in all club social functions',
   'Access to work parties and club events',
   'Electronic gate card (one-time $25 fee)',
@@ -85,10 +85,15 @@ export default function MembershipPage() {
 
           {/* Member responsibilities */}
           <Box sx={{ mb: 8 }}>
-            <Typography color="text.secondary" sx={{ mb: 4, lineHeight: 1.8 }}>
-              After you have accomplished the above and paid your dues, you may be voted into the club
-              and will be able to start enjoying the benefits of being a club member.
-            </Typography>
+            <Box sx={{ mb: 4, p: 3, border: '2px solid', borderColor: 'primary.main', borderRadius: 1, backgroundColor: 'rgba(77,142,247,0.08)' }}>
+              <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.15em', display: 'block', mb: 1 }}>
+                For New Members
+              </Typography>
+              <Typography color="text.secondary" sx={{ lineHeight: 1.8 }}>
+                After you have accomplished the above and paid your dues, you may be voted into the club
+                and will be able to start enjoying the benefits of being a club member.
+              </Typography>
+            </Box>
 
             <Grid container spacing={3}>
               {/* Volunteer hours */}
@@ -144,7 +149,7 @@ export default function MembershipPage() {
                       <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>
                         Meeting attendance and volunteer hours are not required for fee-only memberships,
                         but the membership form, payment, gate card, and official waiver requirements
-                        still apply.
+                        still apply. Non-working members do not have voting rights.
                       </Typography>
                     </CardContent>
                   </Card>
@@ -196,7 +201,7 @@ export default function MembershipPage() {
                       {[
                         { cat: 'Working Household', mx: '$375', trials: '$200', hours: '20' },
                         { cat: 'Additional Youth (11-21)', mx: '$100', trials: '$25', hours: '5' },
-                        { cat: 'Additional Adult (22+)', mx: '$200', trials: '$200', hours: '10' },
+                        { cat: 'Additional Adult (22+)', mx: '$200', trials: '$100', hours: '10' },
                       ].map((row) => (
                         <TableRow key={row.cat} sx={{ '&:last-child td': { border: 0 } }}>
                           <TableCell sx={{ color: 'text.primary', fontSize: '0.875rem' }}>{row.cat}</TableCell>
