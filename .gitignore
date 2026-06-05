@@ -45,3 +45,4 @@ infrastructure/*.tfvars
 
 # OS
 .DS_Store
+public/files/
