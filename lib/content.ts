@@ -22,12 +22,6 @@ export type NewsPost = {
   content?: string;
 };
 
-export type Sponsor = {
-  name: string;
-  logo?: string;
-  url: string;
-  tier: 'Title' | 'Supporting';
-};
 
 export function getTrackStatus(): TrackStatus {
   const filePath = path.join(contentDir, 'track-status.json');
@@ -76,15 +70,3 @@ export async function getNewsPost(slug: string): Promise<NewsPost | null> {
   };
 }
 
-export function getAllSponsors(): Sponsor[] {
-  const sponsorsDir = path.join(contentDir, 'sponsors');
-  if (!fs.existsSync(sponsorsDir)) return [];
-
-  const files = fs.readdirSync(sponsorsDir).filter((f) => f.endsWith('.json'));
-  return files
-    .map((file) => {
-      const raw = fs.readFileSync(path.join(sponsorsDir, file), 'utf-8');
-      return JSON.parse(raw) as Sponsor;
-    })
-    .sort((a) => (a.tier === 'Title' ? -1 : 1));
-}
