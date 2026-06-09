@@ -1,5 +1,6 @@
 locals {
-  s3_origin_id = "omcracing-s3-origin"
+  s3_origin_id       = "omcracing-s3-origin"
+  s3_files_origin_id = "omcracing-s3-files-origin"
 }
 
 # CloudFront Function — rewrites directory requests to /path/index.html
@@ -12,6 +13,16 @@ resource "aws_cloudfront_function" "rewrite_index" {
     function handler(event) {
       var request = event.request;
       var uri = request.uri;
+
+      // Redirect /admin (no trailing slash) to /admin/ so Decap CMS hash
+      // routing produces /admin/#/ instead of /admin#/
+      if (uri === '/admin') {
+        return {
+          statusCode: 301,
+          statusDescription: 'Moved Permanently',
+          headers: { location: { value: '/admin/' } }
+        };
+      }
 
       // Append /index.html to trailing-slash URIs
       if (uri.endsWith('/')) {
@@ -38,6 +49,33 @@ resource "aws_cloudfront_distribution" "website" {
     domain_name              = aws_s3_bucket.website.bucket_regional_domain_name
     origin_id                = local.s3_origin_id
     origin_access_control_id = aws_cloudfront_origin_access_control.website.id
+  }
+
+  origin {
+    domain_name              = aws_s3_bucket.files.bucket_regional_domain_name
+    origin_id                = local.s3_files_origin_id
+    origin_access_control_id = aws_cloudfront_origin_access_control.website.id
+  }
+
+  # /files/* served from the dedicated files bucket — no index.html rewriting needed
+  ordered_cache_behavior {
+    path_pattern           = "/files/*"
+    allowed_methods        = ["GET", "HEAD"]
+    cached_methods         = ["GET", "HEAD"]
+    target_origin_id       = local.s3_files_origin_id
+    viewer_protocol_policy = "redirect-to-https"
+    compress               = true
+
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+
+    min_ttl     = 0
+    default_ttl = 86400   # 24h — files change infrequently
+    max_ttl     = 604800  # 7 days
   }
 
   default_cache_behavior {

@@ -27,3 +27,20 @@ output "oauth_api_endpoint" {
   description = "Decap CMS OAuth proxy API endpoint"
   value       = "https://api.${var.domain_name}"
 }
+
+output "files_bucket_name" {
+  description = "S3 bucket for club file uploads (PDFs, schedules, etc.)"
+  value       = aws_s3_bucket.files.bucket
+}
+
+output "files_uploader_access_key_id" {
+  description = "Access key ID for the file uploader IAM user (for Cyberduck)"
+  value       = aws_iam_access_key.files_uploader.id
+  sensitive   = true
+}
+
+output "files_uploader_secret_access_key" {
+  description = "Secret access key for the file uploader IAM user (for Cyberduck)"
+  value       = aws_iam_access_key.files_uploader.secret
+  sensitive   = true
+}

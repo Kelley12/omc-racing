@@ -35,6 +35,79 @@ resource "aws_iam_role" "github_deploy" {
   }
 }
 
+# ── File uploader IAM user ────────────────────────────────────────────────────
+# Scoped to omcracing-files bucket only — cannot touch website files.
+
+resource "aws_iam_user" "files_uploader" {
+  name = "omcracing-files-uploader"
+
+  tags = {
+    Project = "omc-racing"
+  }
+}
+
+resource "aws_iam_user_policy" "files_uploader" {
+  name = "omcracing-files-upload"
+  user = aws_iam_user.files_uploader.name
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid    = "FilesAccess"
+        Effect = "Allow"
+        Action = [
+          "s3:PutObject",
+          "s3:GetObject",
+          "s3:DeleteObject",
+          "s3:ListBucket",
+        ]
+        Resource = [
+          aws_s3_bucket.files.arn,
+          "${aws_s3_bucket.files.arn}/*",
+        ]
+      }
+    ]
+  })
+}
+
+resource "aws_iam_access_key" "files_uploader" {
+  user = aws_iam_user.files_uploader.name
+}
+
+# Allow the uploader to log into the AWS Console and change their own password
+resource "aws_iam_user_policy" "files_uploader_console" {
+  name = "omcracing-console-access"
+  user = aws_iam_user.files_uploader.name
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid    = "AllowPasswordChange"
+        Effect = "Allow"
+        Action = [
+          "iam:GetAccountPasswordPolicy",
+          "iam:ChangePassword",
+        ]
+        Resource = "arn:aws:iam::280553257669:user/omcracing-files-uploader"
+      }
+    ]
+  })
+}
+
+# AWS Console login for the file uploader.
+# Password is set manually on first login — ignore_changes prevents Tofu from
+# rotating it on subsequent applies.
+resource "aws_iam_user_login_profile" "files_uploader" {
+  user                    = aws_iam_user.files_uploader.name
+  password_reset_required = true
+
+  lifecycle {
+    ignore_changes = all
+  }
+}
+
 # Policy: allow S3 sync + CloudFront invalidation
 resource "aws_iam_role_policy" "github_deploy" {
   name = "omcracing-deploy-policy"

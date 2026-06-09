@@ -56,3 +56,53 @@ resource "aws_s3_bucket_policy" "website" {
 
 # Separate bucket for Terraform state (create this manually first via AWS console)
 # resource "aws_s3_bucket" "tf_state" { ... }
+
+# ── Files bucket — managed externally by the club's file uploader ────────────
+# Serves /files/* via a dedicated CloudFront behavior. Not touched by deployments.
+
+resource "aws_s3_bucket" "files" {
+  bucket = "omcracing-files"
+
+  tags = {
+    Project = "omc-racing"
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "files" {
+  bucket                  = aws_s3_bucket.files.id
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+
+resource "aws_s3_bucket_versioning" "files" {
+  bucket = aws_s3_bucket.files.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+# Allow the same CloudFront distribution to read from this bucket via OAC
+resource "aws_s3_bucket_policy" "files" {
+  bucket = aws_s3_bucket.files.id
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid    = "AllowCloudFrontOAC"
+        Effect = "Allow"
+        Principal = {
+          Service = "cloudfront.amazonaws.com"
+        }
+        Action   = "s3:GetObject"
+        Resource = "${aws_s3_bucket.files.arn}/*"
+        Condition = {
+          StringEquals = {
+            "AWS:SourceArn" = aws_cloudfront_distribution.website.arn
+          }
+        }
+      }
+    ]
+  })
+}

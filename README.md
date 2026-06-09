@@ -293,9 +293,30 @@ Lambda (omcracing-cms-oauth)
 
 ## Adding Photos
 
-Photos can be added via the Decap CMS media uploader (when editing a news post or sponsor) or by placing files directly in `public/images/` and committing them.
+Photos for the website (news posts, sponsor logos, gallery, etc.) can be added two ways:
 
-For larger photo sets, consider uploading directly to the `public/images/` folder in the repo. The files are served via CloudFront — no separate image hosting needed.
+1. **Decap CMS media uploader** — when editing a news post or sponsor in `/admin`, use the image picker to upload a photo. Decap CMS commits it to `public/images/uploads/` in the Git repo, which triggers a GitHub Actions deploy. No manual steps needed.
+2. **Direct Git commit** — place files in `public/images/` and push to `master`. GitHub Actions deploys them automatically.
+
+> **Note:** The `omcracing-files` S3 bucket is unrelated to photos — it is only for member-facing downloadable documents (PDFs, schedules, forms) managed by the club's file uploader via the AWS Console. Decap CMS does not interact with that bucket at all.
+
+---
+
+## Member Downloads (PDFs & Documents)
+
+Downloadable files (membership forms, rule books, schedules, etc.) are hosted in a dedicated S3 bucket and served at `https://omcracing.com/files/filename.pdf`.
+
+These are managed separately from the website — uploads do **not** go through Git or trigger a deploy.
+
+**To upload or replace a file:**
+
+1. Log into the AWS Console: `https://280553257669.signin.aws.amazon.com/console`
+2. Username: `omcracing-files-uploader`
+3. Navigate to **S3 → omcracing-files → files/**
+4. Click **Upload** and drag in the file
+5. The file is immediately available at `https://omcracing.com/files/your-filename.pdf`
+
+**To update a file already linked on the site** (e.g. a new year's membership form with the same filename), simply upload the new file with the same name — it overwrites the old one. CloudFront caches files for 24 hours, so the new version may take up to a day to propagate to all visitors. For an immediate update, contact the site developer to run a cache invalidation.
 
 ---
 
