@@ -29,16 +29,55 @@ export const handler = async (event) => {
 };
 
 function handleAuth(params) {
-  const state = params.state ?? crypto.randomUUID();
+  const state = crypto.randomUUID();
   const url = new URL(GITHUB_OAUTH_URL);
   url.searchParams.set('client_id', process.env.GITHUB_CLIENT_ID);
   url.searchParams.set('scope', SCOPE);
   url.searchParams.set('state', state);
 
+  const origin = process.env.ALLOWED_ORIGIN;
+  const githubUrl = url.toString();
+
+  // Decap CMS (netlify-auth-providers) requires a two-step handshake:
+  //   1. Popup → main:   postMessage('authorizing:github', origin)
+  //   2. Main → popup:   postMessage('authorizing:github', popupOrigin)  (echo)
+  //   3. Popup redirects to GitHub OAuth
+  // Only after the echo does the main window switch its listener to wait for
+  // the authorization:github:success:... message from the callback page.
+  const provider = params.provider ?? 'github';
+  const handshake = `authorizing:${provider}`;
+
+  const script = `
+    <script>
+      (function() {
+        var origin = ${JSON.stringify(origin)};
+        var githubUrl = ${JSON.stringify(githubUrl)};
+        var handshake = ${JSON.stringify(handshake)};
+
+        if (!window.opener) {
+          // Opened directly (not as a popup) — just go straight to GitHub
+          window.location.href = githubUrl;
+          return;
+        }
+
+        // Step 1: send handshake to main window
+        window.opener.postMessage(handshake, origin);
+
+        // Step 2: wait for echo from main window, then redirect to GitHub
+        window.addEventListener('message', function handler(e) {
+          if (e.data === handshake && e.origin === origin) {
+            window.removeEventListener('message', handler);
+            window.location.href = githubUrl;
+          }
+        });
+      })();
+    <\/script>
+  `;
+
   return {
-    statusCode: 302,
-    headers: { Location: url.toString() },
-    body: '',
+    statusCode: 200,
+    headers: { 'Content-Type': 'text/html' },
+    body: `<!doctype html><html><body>${script}</body></html>`,
   };
 }
 
@@ -70,16 +109,30 @@ async function handleCallback(params) {
       return errorPage(`GitHub OAuth error: ${data.error_description ?? data.error}`);
     }
 
-    // Post the token back to the Decap CMS popup opener
+    const origin = process.env.ALLOWED_ORIGIN;
+    const msg = JSON.stringify({
+      token: data.access_token,
+      provider: 'github',
+    });
+
+    // Post the token back to the Decap CMS popup opener, then close.
+    // Fallback: some browsers nullify window.opener when a popup navigates
+    // cross-origin (github.com → api.omcracing.com). In that case, store the
+    // token in localStorage under the key Decap CMS polls, then redirect back
+    // to the admin so the user can complete login without a popup.
     const script = `
       <script>
         (function() {
-          var token = ${JSON.stringify(data.access_token)};
-          var provider = 'github';
-          window.opener.postMessage(
-            'authorization:' + provider + ':success:' + JSON.stringify({ token: token, provider: provider }),
-            ${JSON.stringify(process.env.ALLOWED_ORIGIN)}
-          );
+          var msg = 'authorization:github:success:' + ${JSON.stringify(msg)};
+          var origin = ${JSON.stringify(origin)};
+          if (window.opener) {
+            window.opener.postMessage(msg, origin);
+            setTimeout(function() { window.close(); }, 200);
+          } else {
+            // No opener — redirect main window to admin with token in sessionStorage
+            sessionStorage.setItem('netlify-cms-auth', ${JSON.stringify(msg)});
+            window.location.replace(origin + '/admin/');
+          }
         })();
       <\/script>
     `;
@@ -95,12 +148,19 @@ async function handleCallback(params) {
 }
 
 function errorPage(message) {
+  const origin = process.env.ALLOWED_ORIGIN;
   const script = `
     <script>
-      window.opener.postMessage(
-        'authorization:github:error:' + ${JSON.stringify(JSON.stringify({ message }))},
-        ${JSON.stringify(process.env.ALLOWED_ORIGIN)}
-      );
+      (function() {
+        var msg = 'authorization:github:error:' + ${JSON.stringify(JSON.stringify({ message }))};
+        var origin = ${JSON.stringify(origin ?? '*')};
+        if (window.opener) {
+          window.opener.postMessage(msg, origin);
+          setTimeout(function() { window.close(); }, 200);
+        } else {
+          document.body.innerText = 'Login error: ' + ${JSON.stringify(message)};
+        }
+      })();
     <\/script>
   `;
   return {
