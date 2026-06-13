@@ -54,13 +54,20 @@ resource "aws_iam_user_policy" "files_uploader" {
     Version = "2012-10-17"
     Statement = [
       {
+        # Required for the S3 console to show any buckets at all
+        Sid      = "ListAllBuckets"
+        Effect   = "Allow"
+        Action   = ["s3:ListAllMyBuckets"]
+        Resource = "*"
+      },
+      {
         Sid    = "FilesAccess"
         Effect = "Allow"
         Action = [
-          "s3:PutObject",
-          "s3:GetObject",
-          "s3:DeleteObject",
           "s3:ListBucket",
+          "s3:GetObject",
+          "s3:PutObject",
+          "s3:DeleteObject",
         ]
         Resource = [
           aws_s3_bucket.files.arn,
