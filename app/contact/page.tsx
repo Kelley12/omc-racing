@@ -143,7 +143,7 @@ export default function ContactPage() {
                     Monthly Club Meetings
                   </Typography>
                   <Typography color="text.secondary" sx={{ mb: 2, lineHeight: 1.8 }}>
-                    Club meetings are held on the <strong style={{ color: 'white' }}>3rd Friday of each month at 7:00 PM</strong>.
+                    Club meetings are held on the <strong style={{ color: 'white' }}>first Thursday of each month at 7:00 PM</strong>.
                     All members are expected to attend. Prospective members and guests are welcome.
                   </Typography>
                   <Typography color="text.secondary" sx={{ lineHeight: 1.8 }}>
