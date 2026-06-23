@@ -30,11 +30,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Compute build version
+        # Exposed to the build as NEXT_PUBLIC_BUILD_VERSION (e.g. 2026.06.23-51655cb)
+        # and rendered in the site footer so we can confirm what's live.
+        run: echo "NEXT_PUBLIC_BUILD_VERSION=$(date -u +%Y.%m.%d)-$(git rev-parse --short HEAD)" >> "$GITHUB_ENV"
+
       - name: Build Next.js static export
         run: npm run build
         env:
           NEXT_PUBLIC_GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
           NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY: ${{ secrets.GOOGLE_CALENDAR_API_KEY }}
+          NEXT_PUBLIC_BUILD_VERSION: ${{ env.NEXT_PUBLIC_BUILD_VERSION }}
 
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4

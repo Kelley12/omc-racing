@@ -22,6 +22,9 @@ const footerLinks = [
   { label: 'News', href: '/news' },
 ];
 
+// Injected at build time by the deploy workflow; falls back to "dev" locally.
+const buildVersion = process.env.NEXT_PUBLIC_BUILD_VERSION || 'dev';
+
 export default function Footer() {
   return (
     <Box
@@ -148,6 +151,12 @@ export default function Footer() {
               Privacy Policy
             </Link>
           </Box>
+        </Box>
+
+        <Box sx={{ mt: 2, textAlign: 'center' }}>
+          <Typography variant="caption" sx={{ color: 'text.secondary', opacity: 0.4, fontSize: '0.7rem' }}>
+            v{buildVersion}
+          </Typography>
         </Box>
       </Container>
     </Box>
