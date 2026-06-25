@@ -58,7 +58,7 @@ export default function Footer() {
               Owyhee Motorcycle Club, Est. 1940. AMA-chartered, member-supported motorsports club
               in Southwest Idaho.
             </Typography>
-            <Box sx={{ display: 'flex', gap: 1 }}>
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
               <IconButton
                 component="a"
                 href="https://www.facebook.com/omcracing"
@@ -79,6 +79,20 @@ export default function Footer() {
               >
                 <InstagramIcon />
               </IconButton>
+              <Box
+                component="a"
+                href="https://mxparks.com/motocross-tracks/idaho/owyhee-motorcycle-club-omc-boise"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ display: 'flex', alignItems: 'center', opacity: 0.7, '&:hover': { opacity: 1 } }}
+              >
+                <Box
+                  component="img"
+                  src="https://mxparks.com/badge/owyhee-motorcycle-club-omc-boise/plate.svg"
+                  alt="Verified on MX Parks"
+                  sx={{ height: 32 }}
+                />
+              </Box>
             </Box>
           </Grid>
 

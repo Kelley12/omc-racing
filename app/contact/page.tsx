@@ -105,7 +105,7 @@ export default function ContactPage() {
                 <Card sx={{ border: '1px solid rgba(255,255,255,0.08)' }}>
                   <CardContent sx={{ p: 3 }}>
                     <Typography variant="h6" sx={{ fontFamily: '"Barlow Condensed", sans-serif', mb: 2 }}>Follow Us</Typography>
-                    <Box sx={{ display: 'flex', gap: 2 }}>
+                    <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', alignItems: 'center' }}>
                       <Button
                         component="a"
                         href="https://www.facebook.com/omcracing"
@@ -128,6 +128,20 @@ export default function ContactPage() {
                       >
                         Instagram
                       </Button>
+                      <Box
+                        component="a"
+                        href="https://mxparks.com/motocross-tracks/idaho/owyhee-motorcycle-club-omc-boise"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{ display: 'flex', alignItems: 'center', opacity: 0.8, '&:hover': { opacity: 1 } }}
+                      >
+                        <Box
+                          component="img"
+                          src="https://mxparks.com/badge/owyhee-motorcycle-club-omc-boise/plate.svg"
+                          alt="Verified on MX Parks"
+                          sx={{ height: 36 }}
+                        />
+                      </Box>
                     </Box>
                   </CardContent>
                 </Card>
