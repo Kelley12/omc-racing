@@ -15,19 +15,49 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { fetchUpcomingEvents, type CalendarEvent } from '@/lib/googleCalendar';
 
+function isMultiDay(start: string, end?: string, allDay?: boolean): boolean {
+  if (!end) return false;
+  const tz = allDay ? 'UTC' : undefined;
+  const startDay = new Date(start).toLocaleDateString('en-US', { timeZone: tz });
+  const endDay = new Date(end).toLocaleDateString('en-US', { timeZone: tz });
+  return startDay !== endDay;
+}
+
 function formatEventDate(start: string, end?: string, allDay?: boolean): string {
-  const opts: Intl.DateTimeFormatOptions = allDay
+  const tz = allDay ? 'UTC' : undefined;
+  const fullOpts: Intl.DateTimeFormatOptions = allDay
     ? { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }
     : { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
-  const startStr = new Date(start).toLocaleDateString('en-US', opts);
-  if (!end) return startStr;
-  return startStr;
+  const startStr = new Date(start).toLocaleDateString('en-US', fullOpts);
+
+  if (!end || !isMultiDay(start, end, allDay)) return startStr;
+
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+  const endStr = allDay
+    ? endDate.toLocaleDateString('en-US', fullOpts)
+    : endDate.toLocaleDateString('en-US', fullOpts);
+  const sameYear =
+    startDate.toLocaleDateString('en-US', { year: 'numeric', timeZone: tz }) ===
+    endDate.toLocaleDateString('en-US', { year: 'numeric', timeZone: tz });
+
+  if (allDay && sameYear) {
+    // Drop the trailing ", YYYY" from the start half since the end half already carries it.
+    const startNoYear = startDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', timeZone: tz });
+    return `${startNoYear} – ${endStr}`;
+  }
+
+  return `${startStr} – ${endStr}`;
 }
 
 function EventCard({ event }: { event: CalendarEvent }) {
   const date = formatEventDate(event.start, event.end, event.allDay);
-  const month = new Date(event.start).toLocaleDateString('en-US', { month: 'short', timeZone: event.allDay ? 'UTC' : undefined }).toUpperCase();
-  const day = new Date(event.start).toLocaleDateString('en-US', { day: 'numeric', timeZone: event.allDay ? 'UTC' : undefined });
+  const multiDay = isMultiDay(event.start, event.end, event.allDay);
+  const tz = event.allDay ? 'UTC' : undefined;
+  const month = new Date(event.start).toLocaleDateString('en-US', { month: 'short', timeZone: tz }).toUpperCase();
+  const day = multiDay && event.end
+    ? `${new Date(event.start).toLocaleDateString('en-US', { day: 'numeric', timeZone: tz })}–${new Date(event.end).toLocaleDateString('en-US', { day: 'numeric', timeZone: tz })}`
+    : new Date(event.start).toLocaleDateString('en-US', { day: 'numeric', timeZone: tz });
 
   return (
     <Card sx={{ display: 'flex', border: '1px solid rgba(255,255,255,0.08)', transition: 'border-color 0.2s', '&:hover': { borderColor: 'rgba(255,255,255,0.2)' } }}>
@@ -38,7 +68,7 @@ function EventCard({ event }: { event: CalendarEvent }) {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          minWidth: 72,
+          minWidth: multiDay ? 96 : 72,
           backgroundColor: 'rgba(77,142,247,0.18)',
           borderRight: '1px solid rgba(255,255,255,0.12)',
           px: 2,
@@ -48,7 +78,7 @@ function EventCard({ event }: { event: CalendarEvent }) {
         <Typography variant="caption" sx={{ color: 'primary.main', fontWeight: 700, lineHeight: 1 }}>
           {month}
         </Typography>
-        <Typography variant="h4" sx={{ color: 'white', lineHeight: 1, fontFamily: '"Barlow Condensed", sans-serif' }}>
+        <Typography variant={multiDay ? 'h5' : 'h4'} sx={{ color: 'white', lineHeight: 1, fontFamily: '"Barlow Condensed", sans-serif', whiteSpace: 'nowrap' }}>
           {day}
         </Typography>
       </Box>

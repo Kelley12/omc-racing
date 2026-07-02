@@ -11,6 +11,14 @@ export type CalendarEvent = {
 
 const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3/calendars';
 
+// Google Calendar reports all-day event end dates as exclusive (the day after
+// the event actually ends), so shift back a day to get the last inclusive day.
+function normalizeAllDayEnd(endDate: string): string {
+  const d = new Date(`${endDate}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() - 1);
+  return d.toISOString().slice(0, 10);
+}
+
 export async function fetchUpcomingEvents(
   calendarId: string,
   apiKey: string,
@@ -29,14 +37,18 @@ export async function fetchUpcomingEvents(
 
   const data = await res.json();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return (data.items ?? []).map((item: any): CalendarEvent => ({
-    id: item.id,
-    title: item.summary ?? 'Event',
-    start: item.start?.dateTime ?? item.start?.date ?? '',
-    end: item.end?.dateTime ?? item.end?.date,
-    allDay: !item.start?.dateTime,
-    description: item.description,
-    location: item.location,
-    htmlLink: item.htmlLink,
-  }));
+  return (data.items ?? []).map((item: any): CalendarEvent => {
+    const allDay = !item.start?.dateTime;
+    const rawEnd = item.end?.dateTime ?? item.end?.date;
+    return {
+      id: item.id,
+      title: item.summary ?? 'Event',
+      start: item.start?.dateTime ?? item.start?.date ?? '',
+      end: allDay && rawEnd ? normalizeAllDayEnd(rawEnd) : rawEnd,
+      allDay,
+      description: item.description,
+      location: item.location,
+      htmlLink: item.htmlLink,
+    };
+  });
 }
