@@ -42,18 +42,12 @@ export default function Footer() {
         <Grid container spacing={4}>
           {/* Brand column */}
           <Grid size={{ xs: 12, md: 4 }}>
-            <Typography
-              variant="h5"
-              sx={{
-                fontFamily: '"Barlow Condensed", sans-serif',
-                fontWeight: 800,
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                mb: 1,
-              }}
-            >
-              OMC<Box component="span" sx={{ color: 'primary.main' }}> Racing</Box>
-            </Typography>
+            <Box
+              component="img"
+              src="/images/logo/omc-logo.png"
+              alt="Owyhee Motorcycle Club"
+              sx={{ height: 72, width: 'auto', mb: 2 }}
+            />
             <Typography variant="body2" color="text.secondary" sx={{ mb: 2, maxWidth: 300 }}>
               Owyhee Motorcycle Club, Est. 1940. AMA-chartered, member-supported motorsports club
               in Southwest Idaho.

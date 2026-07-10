@@ -16,7 +16,6 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import Typography from '@mui/material/Typography';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -40,20 +39,12 @@ export default function Header() {
         <Toolbar sx={{ px: { xs: 2, md: 4 }, minHeight: { xs: 64, md: 72 } }}>
           {/* Logo */}
           <Box component={Link} href="/" sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', mr: 4 }}>
-            <Typography
-              variant="h5"
-              sx={{
-                fontFamily: '"Barlow Condensed", sans-serif',
-                fontWeight: 800,
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                color: 'white',
-                lineHeight: 1,
-              }}
-            >
-              OMC
-              <Box component="span" sx={{ color: 'rgba(255,255,255,0.7)', ml: 0.5 }}>Racing</Box>
-            </Typography>
+            <Box
+              component="img"
+              src="/images/logo/omc-logo.png"
+              alt="Owyhee Motorcycle Club"
+              sx={{ height: { xs: 40, md: 48 }, width: 'auto' }}
+            />
           </Box>
 
           {/* Desktop nav */}
@@ -121,9 +112,12 @@ export default function Header() {
         slotProps={{ paper: { sx: { width: 280, backgroundColor: 'background.paper' } } }}
       >
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', p: 2 }}>
-          <Typography variant="h6" sx={{ color: 'white' }}>
-            OMC Racing
-          </Typography>
+          <Box
+            component="img"
+            src="/images/logo/omc-logo.png"
+            alt="Owyhee Motorcycle Club"
+            sx={{ height: 40, width: 'auto' }}
+          />
           <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: 'white' }}>
             <CloseIcon />
           </IconButton>
