@@ -48,47 +48,63 @@ export default function HomePage() {
         }}
       >
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
-          <Box sx={{ maxWidth: 700 }}>
-            <Typography
-              variant="overline"
-              sx={{ color: 'primary.main', letterSpacing: '0.2em', fontSize: '0.75rem', fontWeight: 700 }}
-            >
-              Est. 1940 · Boise, Idaho
-            </Typography>
-            <Typography
-              variant="h1"
-              sx={{ fontSize: { xs: '3rem', sm: '4rem', md: '5.5rem' }, lineHeight: 0.95, mt: 1, mb: 3 }}
-            >
-              Owyhee
-              <Box component="span" sx={{ color: 'primary.main', display: 'block' }}>
-                Motorcycle
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: { xs: 'column', md: 'row' },
+              alignItems: 'center',
+              gap: { xs: 3, md: 5 },
+              textAlign: { xs: 'center', md: 'left' },
+            }}
+          >
+            <Box
+              component="img"
+              src="/images/logo/omc-logo.png"
+              alt="Owyhee Motorcycle Club"
+              sx={{ height: { xs: 90, sm: 110, md: 130 }, width: 'auto', flexShrink: 0 }}
+            />
+            <Box sx={{ maxWidth: 700 }}>
+              <Typography
+                variant="overline"
+                sx={{ color: 'primary.main', letterSpacing: '0.2em', fontSize: '0.75rem', fontWeight: 700 }}
+              >
+                Est. 1940 · Boise, Idaho
+              </Typography>
+              <Typography
+                variant="h1"
+                sx={{ fontSize: { xs: '3rem', sm: '4rem', md: '5.5rem' }, lineHeight: 0.95, mt: 1, mb: 3 }}
+              >
+                Owyhee
+                <Box component="span" sx={{ color: 'primary.main', display: 'block' }}>
+                  Motorcycle
+                </Box>
+                Club
+              </Typography>
+              <Typography variant="h6" color="text.secondary" sx={{ fontFamily: 'inherit', fontWeight: 400, mb: 4, maxWidth: 560 }}>
+                AMA-chartered motocross and trials club in Southwest Idaho.
+                Open to members and non-members alike.
+              </Typography>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
+                <Button
+                  component={Link}
+                  href="/membership"
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  endIcon={<ArrowForwardIcon />}
+                >
+                  Become a Member
+                </Button>
+                <Button
+                  component={Link}
+                  href="/calendar"
+                  variant="outlined"
+                  color="secondary"
+                  size="large"
+                >
+                  View Events
+                </Button>
               </Box>
-              Club
-            </Typography>
-            <Typography variant="h6" color="text.secondary" sx={{ fontFamily: 'inherit', fontWeight: 400, mb: 4, maxWidth: 560 }}>
-              AMA-chartered motocross and trials club in Southwest Idaho.
-              Open to members and non-members alike.
-            </Typography>
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
-              <Button
-                component={Link}
-                href="/membership"
-                variant="contained"
-                color="primary"
-                size="large"
-                endIcon={<ArrowForwardIcon />}
-              >
-                Become a Member
-              </Button>
-              <Button
-                component={Link}
-                href="/calendar"
-                variant="outlined"
-                color="secondary"
-                size="large"
-              >
-                View Events
-              </Button>
             </Box>
           </Box>
         </Container>
