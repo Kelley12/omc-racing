@@ -17,9 +17,10 @@ import { getTrackStatus, getAllNewsPosts } from '@/lib/content';
 
 // Diamond and Gold sponsors — shown on the homepage
 const titleSponsors = [
-  { name: 'Yamaha Outdoor Access Initiative / Dillon Powersports', url: 'https://www.dennisdillonpowersports.com/', logo: '/images/sponsors/yoai-dillon-powersports.png' },
-  { name: "Carl's Cycle Sales", url: 'https://carlscycle.com', logo: '/images/sponsors/carls-sponsor-logo.jpeg' },
-  { name: 'Dave Evans Construction', url: 'https://devansconstruction.com', logo: '/images/sponsors/dec_logo.jpeg' },
+  { name: 'Yamaha Outdoor Access Initiative / Dillon Powersports', url: 'https://www.dennisdillonpowersports.com/', logo: '/images/sponsors/yoai-dillon-powersports.png', tier: 'diamond', whiteBg: true },
+  { name: 'Project Filter', url: 'https://projectfilter.org', logo: '/images/sponsors/project-filter.png', tier: 'diamond' },
+  { name: "Carl's Cycle Sales", url: 'https://carlscycle.com', logo: '/images/sponsors/carls-sponsor-logo.jpeg', tier: 'gold' },
+  { name: 'Dave Evans Construction', url: 'https://devansconstruction.com', logo: '/images/sponsors/dec_logo.jpeg', tier: 'gold' },
 ];
 
 
@@ -271,37 +272,40 @@ export default function HomePage() {
 
           {/* Title sponsors — large tiles */}
           <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 2, mb: 6 }}>
-            {titleSponsors.map((sponsor) => (
-              <Box
-                key={sponsor.name}
-                component="a"
-                href={sponsor.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={sponsor.name}
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  p: 3,
-                  backgroundColor: '#d8d8d8',
-                  borderRadius: 1,
-                  width: { xs: 140, sm: 180 },
-                  height: 110,
-                  flexShrink: 0,
-                  textDecoration: 'none',
-                  transition: 'opacity 0.2s, box-shadow 0.2s',
-                  '&:hover': { opacity: 0.85, boxShadow: '0 0 0 2px #4d8ef7' },
-                }}
-              >
+            {titleSponsors.map((sponsor) => {
+              const isDiamond = sponsor.tier === 'diamond';
+              return (
                 <Box
-                  component="img"
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  sx={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
-                />
-              </Box>
-            ))}
+                  key={sponsor.name}
+                  component="a"
+                  href={sponsor.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={sponsor.name}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    p: 3,
+                    borderRadius: 1,
+                    width: isDiamond ? { xs: 180, sm: 220 } : { xs: 140, sm: 180 },
+                    height: isDiamond ? 150 : 110,
+                    flexShrink: 0,
+                    textDecoration: 'none',
+                    transition: 'opacity 0.2s, box-shadow 0.2s',
+                    '&:hover': { opacity: 0.85, boxShadow: '0 0 0 2px #4d8ef7' },
+                    ...(sponsor.whiteBg && { backgroundColor: '#fff' }),
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    sx={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                  />
+                </Box>
+              );
+            })}
           </Box>
 
           <Box sx={{ textAlign: 'center' }}>

@@ -18,7 +18,8 @@ export const metadata: Metadata = {
 
 // All logos self-hosted under /public/images/sponsors/
 const diamondSponsors = [
-  { name: 'Yamaha Outdoor Access Initiative / Dillon Powersports', url: 'https://www.dennisdillonpowersports.com/', logo: '/images/sponsors/yoai-dillon-powersports.png' },
+  { name: 'Yamaha Outdoor Access Initiative / Dillon Powersports', url: 'https://www.dennisdillonpowersports.com/', logo: '/images/sponsors/yoai-dillon-powersports.png', whiteBg: true },
+  { name: 'Project Filter', url: 'https://projectfilter.org', logo: '/images/sponsors/project-filter.png' },
 ];
 
 const goldSponsors = [
@@ -45,7 +46,6 @@ const logoTileBase = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  backgroundColor: '#d8d8d8',
   borderRadius: 1,
   overflow: 'hidden',
   textDecoration: 'none',
@@ -88,7 +88,12 @@ export default function SponsorsPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={sponsor.name}
-                    sx={{ ...logoTileBase, p: 4, height: 180 }}
+                    sx={{
+                      ...logoTileBase,
+                      p: 4,
+                      height: 220,
+                      ...(sponsor.whiteBg && { backgroundColor: '#fff' }),
+                    }}
                   >
                     <Box
                       component="img"
@@ -118,7 +123,7 @@ export default function SponsorsPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={sponsor.name}
-                    sx={{ ...logoTileBase, p: 3, height: 140 }}
+                    sx={{ ...logoTileBase, p: 3, height: 150 }}
                   >
                     <Box
                       component="img"
@@ -148,7 +153,7 @@ export default function SponsorsPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={sponsor.name}
-                    sx={{ ...logoTileBase, p: 2, height: 110 }}
+                    sx={{ ...logoTileBase, p: 2, height: 95 }}
                   >
                     <Box
                       component="img"
