@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const memberBenefits = [
   'Year-round track access 7am to 9pm daily (except race days and day prior)',
-  'Members-only Watered Wednesday practices (Memorial Day through Labor Day)',
+  'Members-only Watered Wednesday practices (Memorial Day through Labor Day) (unless track is closed for planned events or repairs as needed)',
   'Voting rights at monthly club meetings (working members only)',
   'Participation in all club social functions',
   'Access to work parties and club events',
