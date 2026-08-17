@@ -67,7 +67,7 @@ export default function MembershipPage() {
                 { title: 'Waiver', body: 'An annual waiver must be completed on the official form. No copies or prints allowed. Must be witnessed (or notarized if completing remotely). Available at meetings, events, or by contacting a board member.' },
                 { title: 'Meeting Attendance', body: 'Attend monthly club meetings held the first Thursday of each month at 7:00 PM. To be voted in, attend 2 meetings and work half your required hours, or attend 3 meetings.' },
                 { title: 'Good Standing', body: 'Members must be in good standing and of good moral character as determined by the club board.' },
-                { title: 'Volunteer Hours', body: 'Working members must complete the required number of volunteer hours (half due by June 1, remaining by season end). Non-working memberships waive hours in exchange for higher dues.' },
+                { title: 'Volunteer Hours', body: 'Working members must complete 50% of the required volunteer hours by the end of the 6th month and all hours must be completed by the last month of the membership year. Non-working memberships waive hours in exchange for higher dues.' },
               ].map((req) => (
                 <Grid key={req.title} size={{ xs: 12, sm: 6 }}>
                   <Card sx={{ height: '100%', border: '1px solid rgba(255,255,255,0.08)' }}>
@@ -108,8 +108,8 @@ export default function MembershipPage() {
                         'A member MUST work 1 event during the year, and these hours count toward your required total.',
                         'You are responsible for tracking your own hours. Work vouchers are provided by OMC and must be legible, signed, and dated by a board member. Keep the yellow copy for your records.',
                         'Vouchers that are not signed and legible will not be counted.',
-                        'Members who have not completed half their work hours by June 1st will have their gate card deactivated.',
-                        'All hours must be completed by the end of December.',
+                        'Members who have not completed half of their work hours by the end of the 6th month will have their gate card deactivated.',
+                        'All hours must be completed by the last month of the current membership year.',
                         'The day before each public event is a work day for prep. Flaggers are required at each event. Hours can also be earned via grounds clean-up: trash pick-up, weeds, emptying cans, starting gate, fence repair, and more. Contact the Groundskeeper or any board member for details.',
                       ].map((item, i) => (
                         <Box key={i} sx={{ display: 'flex', gap: 1.5, alignItems: 'flex-start' }}>
