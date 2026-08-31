@@ -11,7 +11,9 @@ import EmailIcon from '@mui/icons-material/Email';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import GroupsIcon from '@mui/icons-material/Groups';
 import type { Metadata } from 'next';
+import BoardMembers from '@/components/contact/BoardMembers';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -33,6 +35,22 @@ export default function ContactPage() {
             Questions about membership, events, or facility access? Reach out and a club officer
             will get back to you.
           </Typography>
+        </Container>
+      </Box>
+
+      {/* Board members */}
+      <Box sx={{ py: { xs: 6, md: 8 }, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <Container maxWidth="lg">
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
+            <GroupsIcon sx={{ color: 'primary.main' }} />
+            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>
+              Board of Directors
+            </Typography>
+          </Box>
+          <Typography variant="h3" sx={{ mb: 4, fontFamily: '"Barlow Condensed", sans-serif', fontSize: { xs: '1.75rem', md: '2.25rem' } }}>
+            Club Officers
+          </Typography>
+          <BoardMembers />
         </Container>
       </Box>
 
