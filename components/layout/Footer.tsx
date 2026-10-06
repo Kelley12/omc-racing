@@ -55,7 +55,7 @@ export default function Footer() {
             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
               <IconButton
                 component="a"
-                href="https://www.facebook.com/omcracing"
+                href="https://www.facebook.com/Owyheemotorcycleclub"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -65,7 +65,7 @@ export default function Footer() {
               </IconButton>
               <IconButton
                 component="a"
-                href="https://www.instagram.com/omcracing"
+                href="https://www.instagram.com/omc_raceway"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"

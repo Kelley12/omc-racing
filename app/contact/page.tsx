@@ -126,7 +126,7 @@ export default function ContactPage() {
                     <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', alignItems: 'center' }}>
                       <Button
                         component="a"
-                        href="https://www.facebook.com/omcracing"
+                        href="https://www.facebook.com/Owyheemotorcycleclub"
                         target="_blank"
                         rel="noopener noreferrer"
                         variant="outlined"
@@ -137,7 +137,7 @@ export default function ContactPage() {
                       </Button>
                       <Button
                         component="a"
-                        href="https://www.instagram.com/omcracing"
+                        href="https://www.instagram.com/omc_raceway"
                         target="_blank"
                         rel="noopener noreferrer"
                         variant="outlined"
