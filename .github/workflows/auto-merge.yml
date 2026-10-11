@@ -1,0 +1,29 @@
+name: Auto-merge
+
+# Queues auto-merge for every PR that is ready for review (not a draft).
+# GitHub then merges it as soon as the required checks on master pass.
+# Required checks come from branch protection: select "Lint & Build" (ci.yml).
+# Without a required check, auto-merge merges immediately.
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  enable-auto-merge:
+    name: Enable auto-merge
+    runs-on: ubuntu-latest
+    # Skip drafts, and PRs from forks (their token is read-only).
+    if: >-
+      github.event.pull_request.draft == false &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - name: Enable auto-merge (squash)
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
