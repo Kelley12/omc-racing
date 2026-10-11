@@ -9,6 +9,14 @@ permissions:
   id-token: write   # Required for OIDC token
   contents: write   # Required to create GitHub releases
 
+# Only one deploy at a time. Overlapping runs each `s3 sync --delete` their own
+# build and wipe out the other's hashed JS chunks, leaving index.html pointing
+# at files that 404 (blank page). Queue instead of cancelling so a run that is
+# mid-sync is never killed halfway.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
 env:
   AWS_REGION: us-west-2
 
